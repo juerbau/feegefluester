@@ -1,5 +1,5 @@
 import {cn} from "@/lib/utils/cn";
-import GoldenLineWithStar from "@/ui/components/GoldenLineWithStar";
+import GoldenLine from "@/ui/components/GoldenLine";
 
 export default function HomeHeroIntro({className, content}) {
     return (
@@ -34,7 +34,7 @@ export default function HomeHeroIntro({className, content}) {
                     "text-[#c8a56e]"
                 )}
             >
-                <GoldenLineWithStar className="w-[clamp(16rem,30vw,30rem)]" />
+                <GoldenLine className="w-[clamp(16rem,30vw,30rem)]" />
                 <p
                     className={cn(
                         "text-lg",

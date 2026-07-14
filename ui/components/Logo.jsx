@@ -32,7 +32,7 @@ export default function Logo({variant}) {
             >
                 <Image
                     src={logo}
-                    alt="ARTelier8 Logo"
+                    alt="Feegeflüster Logo"
                     fill
                     priority={variant === "hero" || variant === "message"}
                     sizes={logoConfig[variant].sizes}
