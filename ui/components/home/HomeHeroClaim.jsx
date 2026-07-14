@@ -1,7 +1,7 @@
 import {cn} from "@/lib/utils/cn";
 import HeroStar from "@/ui/components/home/HeroStar";
 
-export default function HomeHeroClaim({className}) {
+export default function HomeHeroClaim({className, content}) {
     return (
         <div
             className={cn(
@@ -39,7 +39,7 @@ export default function HomeHeroClaim({className}) {
                     "text-[#c8a56e]"
                 )}
             >
-                JEDE SEELE HAT ETWAS ZU SAGEN.
+                {content.eyebrow}
             </p>
 
             <p
@@ -50,7 +50,7 @@ export default function HomeHeroClaim({className}) {
                     "text-[#827d87]"
                 )}
             >
-                Ich helfe dir, zuzuhören …
+                {content.text}
             </p>
         </div>
     );

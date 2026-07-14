@@ -3,7 +3,7 @@ import Image from "next/image";
 import HomeHeroIntro from "@/ui/components/home/HomeHeroIntro";
 import HomeHeroClaim from "@/ui/components/home/HomeHeroClaim";
 
-export default function HomeHero() {
+export default function HomeHero({content}) {
     return (
         <>
             <section
@@ -18,10 +18,14 @@ export default function HomeHero() {
                     className="block h-auto w-full"
                 />
 
-                <HomeHeroIntro />
+                <HomeHeroIntro
+                    content={content}
+                />
             </section>
 
-            <HomeHeroClaim />
+            <HomeHeroClaim
+                content={content.claim}
+            />
         </>
     );
 }

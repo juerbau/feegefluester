@@ -1,4 +1,6 @@
 import {client} from "@/sanity/client";
+
+import {homeContent} from "@/lib/content/homeContent";
 import HomeHero from "@/ui/components/home/HomeHero";
 import PageContentWidth from "@/ui/components/utils/PageContentWidth";
 
@@ -7,12 +9,15 @@ const TEST_QUERY = `*[_type == "test"]{_id, title}`;
 const options = {next: {revalidate: 30}};
 
 export default async function HomePage() {
+    const content = homeContent;
     const posts = await client.fetch(TEST_QUERY, {}, options);
 
     return (
         <main className="px-8 min-h-screen">
             <PageContentWidth width="hero">
-                <HomeHero/>
+                <HomeHero
+                    content={content.hero}
+                />
             </PageContentWidth>
             {/*<br />*/}
             {/*<br />*/}

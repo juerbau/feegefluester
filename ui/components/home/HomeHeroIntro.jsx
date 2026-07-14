@@ -1,6 +1,7 @@
 import {cn} from "@/lib/utils/cn";
+import GoldenLineWithStar from "@/ui/components/GoldenLineWithStar";
 
-export default function HomeHeroIntro({className}) {
+export default function HomeHeroIntro({className, content}) {
     return (
         <div
             className={cn(
@@ -18,11 +19,11 @@ export default function HomeHeroIntro({className}) {
                     "text-[clamp(2.5rem,4.8vw,4.5rem)]"
                 )}
             >
-                Tierkommunikation
+                {content.title.firstLine}
                 <span className="block">
-                    mit{" "}
+                    {content.title.secondLinePrefix}
                     <span className="text-[#c8a56e] italic font-semibold">
-                        Herz
+                        {content.title.highlight}
                     </span>
                 </span>
             </h1>
@@ -33,19 +34,7 @@ export default function HomeHeroIntro({className}) {
                     "text-[#c8a56e]"
                 )}
             >
-                <div
-                    className={cn(
-                        "mt-4 flex items-center gap-3",
-                        "w-120"
-                    )}
-                    aria-hidden="true"
-                >
-                    <span className="text-lg leading-none">
-                        ✦
-                    </span>
-
-                    <span className="h-px flex-1 bg-current/40"/>
-                </div>
+                <GoldenLineWithStar className="w-[clamp(16rem,30vw,30rem)]" />
                 <p
                     className={cn(
                         "text-lg",
@@ -53,7 +42,7 @@ export default function HomeHeroIntro({className}) {
                         "tracking-[0.2em]"
                     )}
                 >
-                    VERSTEHEN · VERBINDEN · VERTRAUEN
+                    {content.eyebrow}
                 </p>
 
 
@@ -69,9 +58,7 @@ export default function HomeHeroIntro({className}) {
                     "text-2xl"
                 )}
             >
-                Feinfühlige Begleitung für die Verbindung
-                <br/>
-                zwischen dir und deinem Tier.
+                {content.subtitle}
             </p>
         </div>
     );
