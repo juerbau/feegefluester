@@ -24,7 +24,7 @@ export default async function HomePage() {
             <PageContentWidth width="default">
                 <HomeStory
                     story={content.stories[0]}
-                    className="bg-[#afbdaf] px-25"
+                    className="bg-[#FAF6F0] px-25"
                 />
             </PageContentWidth>
 

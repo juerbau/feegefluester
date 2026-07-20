@@ -34,7 +34,7 @@ export default function HomeHeroIntro({className, content}) {
                     "text-[#c8a56e]"
                 )}
             >
-                <GoldenLine className="w-[clamp(16rem,30vw,30rem)]" />
+                {/*<GoldenLine className="w-[clamp(16rem,30vw,30rem)]" />*/}
                 <p
                     className={cn(
                         "text-lg",

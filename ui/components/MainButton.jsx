@@ -14,7 +14,7 @@ export default function MainButton({
             className={cn(
                 "inline-flex items-center justify-center",
                 "rounded-full",
-                "bg-[#c8a56e]",
+                "bg-[#afbdaf]",
                 "text-black",
                 "px-8 py-3",
                 "text-base font-medium",
