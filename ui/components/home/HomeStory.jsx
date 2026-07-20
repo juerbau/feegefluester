@@ -1,6 +1,6 @@
 import {cn} from "@/lib/utils/cn";
 
-import GoldenTransition from "@/ui/components/GoldenTransition";
+import StoryTransition from "@/ui/components/StoryTransition";
 import MainButton from "@/ui/components/MainButton";
 
 export default function HomeStory({
@@ -11,8 +11,7 @@ export default function HomeStory({
         <section
             className={cn(
                 "mx-auto",
-                "max-w-4xl",
-                "py-[clamp(5rem,8vw,8rem)]",
+                "py-20",
                 className
             )}
         >
@@ -36,19 +35,15 @@ export default function HomeStory({
                     "space-y-8"
                 )}
             >
-                {story.innerVoice.map((paragraph) => (
-                    <p
-                        key={paragraph}
-                        className={cn(
-                            "max-w-3xl",
-                            "text-[clamp(1.15rem,1.4vw,1.4rem)]",
-                            "leading-relaxed",
-                            "text-[#827d87]"
-                        )}
-                    >
-                        {paragraph}
-                    </p>
-                ))}
+                <p
+                    className={cn(
+                        "text-[clamp(1.15rem,1.4vw,1.4rem)]",
+                        "leading-relaxed",
+                        "text-[#827d87]"
+                    )}
+                >
+                    {story.innerVoice}
+                </p>
             </div>
 
             {/* Questions */}
@@ -59,24 +54,24 @@ export default function HomeStory({
                     "space-y-3"
                 )}
             >
-                {story.questions.map((question) => (
-                    <p
-                        key={question}
-                        className={cn(
-                            "text-[clamp(1.15rem,1.4vw,1.4rem)]",
-                            "leading-relaxed",
-                            "text-[#827d87]"
-                        )}
-                    >
-                        {question}
-                    </p>
-                ))}
+                <p
+                    className={cn(
+                        "text-[clamp(1.15rem,1.4vw,1.4rem)]",
+                        "leading-relaxed",
+                        "whitespace-pre-line",
+                        "text-[#827d87]",
+                        "italic",
+                        "pl-6"
+                    )}
+                >
+                    {story.questions}
+                </p>
             </div>
 
             {/* Perspektivwechsel */}
 
-            <GoldenTransition
-                className="my-16"
+            <StoryTransition
+                className="my-15"
             />
 
             {/* Guidance */}
@@ -84,21 +79,17 @@ export default function HomeStory({
             <div
                 className={cn(
                     "space-y-8",
-                    "max-w-3xl"
                 )}
             >
-                {story.guidance.map((paragraph) => (
-                    <p
-                        key={paragraph}
-                        className={cn(
-                            "text-[clamp(1.15rem,1.4vw,1.4rem)]",
-                            "leading-relaxed",
-                            "text-[#827d87]"
-                        )}
-                    >
-                        {paragraph}
-                    </p>
-                ))}
+                <p
+                    className={cn(
+                        "text-[clamp(1.15rem,1.4vw,1.4rem)]",
+                        "leading-relaxed",
+                        "text-[#827d87]"
+                    )}
+                >
+                    {story.guidance}
+                </p>
             </div>
 
             {/* CTA */}

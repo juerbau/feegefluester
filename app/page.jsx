@@ -16,16 +16,16 @@ export default async function HomePage() {
     return (
         <main className="px-8 min-h-screen">
             <PageContentWidth width="hero">
+
                 <HomeHero
                     content={content.hero}
                 />
-            </PageContentWidth>
 
-            <PageContentWidth width="default">
                 <HomeStory
                     story={content.stories[0]}
-                    className="bg-[#FAF6F0] px-25"
+                    className="px-25 font-body"
                 />
+
             </PageContentWidth>
 
             {/*<br />*/}

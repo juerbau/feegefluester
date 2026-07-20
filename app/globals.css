@@ -1,8 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  /*--background: #FAF6F0;*/
-  --background: #FFFFFF;
+  --background: #ffffff;
   --foreground: #827d87;
 }
 
@@ -10,18 +9,14 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
 
-  --font-roboto: var(--font-roboto);
+  --font-body: var(--font-nunito);
+  --font-accent: var(--font-cormorant);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
 }
-
-.test{
-  background: #f6ecd3;
-}
-
 
 input:-webkit-autofill {
   box-shadow: 0 0 0 1000px white inset;

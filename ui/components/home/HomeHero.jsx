@@ -20,6 +20,7 @@ export default function HomeHero({content}) {
 
                 <HomeHeroIntro
                     content={content}
+                    className="font-body"
                 />
             </section>
 

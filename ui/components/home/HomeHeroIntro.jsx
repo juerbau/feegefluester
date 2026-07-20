@@ -12,18 +12,30 @@ export default function HomeHeroIntro({className, content}) {
             )}
         >
             <h1
-                id="home-hero-title"
                 className={cn(
+                    "font-body",
+                    "font-light",
+                    "tracking-[-0.035em]",
                     "text-[#827d87]",
-                    "leading-relaxed",
-                    "text-[clamp(2.5rem,4.8vw,4.5rem)]"
+                    "leading-[1.02]",
+                    "text-[clamp(2.5rem,4.8vw,5rem)]"
                 )}
             >
                 {content.title.firstLine}
                 <span className="block">
                     {content.title.secondLinePrefix}
-                    <span className="text-[#c8a56e] italic font-semibold">
-                        {content.title.highlight}
+                    <span
+                        className={cn(
+                            "font-accent",
+                            "font-medium",
+                            "italic",
+                            "tracking-[-0.02em]",
+                            "text-[#c8a56e]",
+                            "text-[90px]",
+                            "pl-1.5"
+                        )}
+                    >
+                        {`${content.title.highlight}`}
                     </span>
                 </span>
             </h1>
@@ -37,9 +49,10 @@ export default function HomeHeroIntro({className, content}) {
                 {/*<GoldenLine className="w-[clamp(16rem,30vw,30rem)]" />*/}
                 <p
                     className={cn(
-                        "text-lg",
+                        "text-xl",
                         "font-medium",
-                        "tracking-[0.2em]"
+                        "tracking-[0.2em]",
+                        "font-accent"
                     )}
                 >
                     {content.eyebrow}
@@ -55,7 +68,8 @@ export default function HomeHeroIntro({className, content}) {
                     "text-[#827d87]",
                     "font-light",
                     "leading-relaxed",
-                    "text-2xl"
+                    "text-2xl",
+                    "whitespace-pre-line"
                 )}
             >
                 {content.subtitle}
