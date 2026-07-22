@@ -1,5 +1,7 @@
 import {cn} from "@/lib/utils/cn";
-import GoldenLine from "@/ui/components/GoldenLine";
+import {Fragment} from "react";
+import {IconSparkle} from "@tabler/icons-react";
+
 
 export default function HomeHeroIntro({className, content}) {
     return (
@@ -13,57 +15,57 @@ export default function HomeHeroIntro({className, content}) {
         >
             <h1
                 className={cn(
-                    "font-body",
+                    "font-accent",
                     "font-light",
                     "tracking-[-0.035em]",
                     "text-[#827d87]",
-                    "leading-[1.02]",
                     "text-[clamp(2.5rem,4.8vw,5rem)]"
                 )}
             >
-                {content.title.firstLine}
-                <span className="block">
+                <span className="block leading-normal">
+                    {content.title.firstLine}
+                </span>
+
+                <span
+                    className={cn(
+                        "block",
+                        "leading-none",
+                        "-mt-[clamp(0.25rem,0.8vw,0.75rem)]"
+                    )}
+                >
                     {content.title.secondLinePrefix}
                     <span
                         className={cn(
-                            "font-accent",
-                            "font-medium",
-                            "italic",
+                            "pl-1.5",
+                            "font-medium italic",
                             "tracking-[-0.02em]",
-                            "text-[#c8a56e]",
-                            "text-[90px]",
-                            "pl-1.5"
+                            "text-[#c8a56e]"
                         )}
                     >
-                        {`${content.title.highlight}`}
+                        {content.title.highlight}
                     </span>
                 </span>
+
             </h1>
 
-            <div
-                className={cn(
-                    "mt-[clamp(1.25rem,2vw,2rem)]",
-                    "text-[#c8a56e]"
-                )}
-            >
-                {/*<GoldenLine className="w-[clamp(16rem,30vw,30rem)]" />*/}
-                <p
-                    className={cn(
-                        "text-xl",
-                        "font-medium",
-                        "tracking-[0.2em]",
-                        "font-accent"
-                    )}
-                >
-                    {content.eyebrow}
-                </p>
+            <div className="flex items-center gap-2 mt-15 text-[#c8a56e]/90">
+                {content.eyebrow.map((item, index) => (
+                    <Fragment key={item}>
+                        {index > 0 && (
+                            <IconSparkle
+                                className="size-4 text-[#c8a56e] -translate-y-px"
+                                stroke={1.25}
+                            />
+                        )}
 
-
+                        <span className="text-xl">{item}</span>
+                    </Fragment>
+                ))}
             </div>
 
             <p
                 className={cn(
-                    "mt-[clamp(1.5rem,2.5vw,2.75rem)]",
+                    "mt-15",
                     "max-w-xl",
                     "text-[#827d87]",
                     "font-light",

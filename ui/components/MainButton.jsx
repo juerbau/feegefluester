@@ -15,7 +15,7 @@ export default function MainButton({
                 "inline-flex items-center justify-center",
                 "rounded-full",
                 "bg-[#afbdaf]",
-                "text-black",
+                "text-black/80",
                 "px-8 py-3",
                 "text-base font-medium",
                 "transition-all duration-300",

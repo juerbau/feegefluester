@@ -14,12 +14,13 @@ export default async function HomePage() {
     // const posts = await client.fetch(TEST_QUERY, {}, options);
 
     return (
-        <main className="px-8 min-h-screen">
+        <main className="min-h-screen">
+            <HomeHero
+                content={content.hero}
+            />
             <PageContentWidth width="hero">
 
-                <HomeHero
-                    content={content.hero}
-                />
+
 
                 <HomeStory
                     story={content.stories[0]}
