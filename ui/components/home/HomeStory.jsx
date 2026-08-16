@@ -2,6 +2,7 @@ import {cn} from "@/lib/utils/cn";
 
 import StoryTransition from "@/ui/components/StoryTransition";
 import MainButton from "@/ui/components/MainButton";
+import {IconSparkle} from "@tabler/icons-react";
 
 export default function HomeStory({
                                       story,
@@ -70,9 +71,10 @@ export default function HomeStory({
 
             {/* Perspektivwechsel */}
 
-            <StoryTransition
-                className="my-15"
-            />
+            {/*<StoryTransition*/}
+            {/*    className="my-15"*/}
+            {/*/>*/}
+
 
             {/* Guidance */}
 
@@ -85,7 +87,8 @@ export default function HomeStory({
                     className={cn(
                         "text-[clamp(1.15rem,1.4vw,1.4rem)]",
                         "leading-relaxed",
-                        "text-[#827d87]"
+                        "text-[#827d87]",
+                        "mt-10"
                     )}
                 >
                     {story.guidance}

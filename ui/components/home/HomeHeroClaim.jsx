@@ -1,4 +1,5 @@
 import {cn} from "@/lib/utils/cn";
+import SparkleDivider from "@/ui/components/utils/SparkleDivider";
 
 export default function HomeHeroClaim({className, content}) {
     return (
@@ -11,6 +12,12 @@ export default function HomeHeroClaim({className, content}) {
                 className
             )}
         >
+            <SparkleDivider
+                size={35}
+                count={1}
+                className="my-12"
+            />
+
             <p
                 className={cn(
                     "mt-[clamp(1rem,1.5vw,1.5rem)]",
@@ -34,6 +41,12 @@ export default function HomeHeroClaim({className, content}) {
             >
                 {content.text}
             </p>
+
+            <SparkleDivider
+                size={16}
+                className="my-12"
+            />
+
         </div>
     );
 }
