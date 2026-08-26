@@ -1,7 +1,5 @@
-import {IconSparkle} from "@tabler/icons-react";
-
 import {cn} from "@/lib/utils/cn";
-import StoryTransition from "@/ui/components/StoryTransition";
+
 import SparkleDivider from "@/ui/components/utils/SparkleDivider";
 
 export default function VerstehenIntro({
@@ -26,12 +24,6 @@ export default function VerstehenIntro({
                 className="my-12"
             />
 
-            {/*<IconSparkle*/}
-            {/*    className="size-10 text-[#c8a56e]"*/}
-            {/*    stroke={1.25}*/}
-            {/*    aria-hidden="true"*/}
-            {/*/>*/}
-
             <h1
                 className={cn(
                     "mt-8",
@@ -40,7 +32,7 @@ export default function VerstehenIntro({
                     "text-[#827d87]",
                     "tracking-tight",
                     "leading-[1.4]",
-                    "whitespace-pre-line",
+                    "whitespace-pre-line"
                 )}
             >
                 {content.statement}
@@ -58,44 +50,10 @@ export default function VerstehenIntro({
                 {content.subline}
             </p>
 
-            {/*<div*/}
-            {/*    className={cn(*/}
-            {/*        "flex items-center justify-center gap-3",*/}
-            {/*        "text-[#c8a56e]",*/}
-            {/*        "mt-20",*/}
-            {/*        className*/}
-            {/*    )}*/}
-            {/*    aria-hidden="true"*/}
-            {/*>*/}
-            {/*<span*/}
-            {/*    className={cn(*/}
-            {/*        "h-px",*/}
-            {/*        "w-120",*/}
-            {/*        "bg-current/40"*/}
-            {/*    )}*/}
-            {/*/>*/}
-
-            {/*    <IconSparkle*/}
-            {/*        className="size-10 shrink-0"*/}
-            {/*        stroke={1.25}*/}
-            {/*    />*/}
-
-            {/*    <span*/}
-            {/*        className={cn(*/}
-            {/*            "h-px",*/}
-            {/*            "w-120",*/}
-            {/*            "bg-current/40"*/}
-            {/*        )}*/}
-            {/*    />*/}
-            {/*</div>*/}
-
             <SparkleDivider
                 size={16}
                 className="my-12"
             />
-
-
         </section>
-
     );
 }

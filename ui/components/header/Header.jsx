@@ -16,12 +16,12 @@ const navigation = [
         href: "/",
     },
     {
-        label: "Über mich",
-        href: "/ueber-mich",
-    },
-    {
         label: "Verstehen",
         href: "/verstehen",
+    },
+    {
+        label: "Über mich",
+        href: "/ueber-mich",
     },
     {
         label: "Begleitung",
