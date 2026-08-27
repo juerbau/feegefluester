@@ -2,7 +2,7 @@ import {Fragment} from "react";
 
 import {verstehenContent} from "@/lib/content/verstehenContent";
 
-import VerstehenIntro from "@/ui/components/verstehen/VerstehenIntro";
+import PageIntro from "@/ui/components/common/PageIntro";
 import VerstehenChapter from "@/ui/components/verstehen/VerstehenChapter";
 import VerstehenClosing from "@/ui/components/verstehen/VerstehenClosing";
 import SparkleDivider from "@/ui/components/utils/SparkleDivider";
@@ -12,7 +12,7 @@ export default function VerstehenPage() {
 
     return (
         <main className="min-h-screen">
-            <VerstehenIntro
+            <PageIntro
                 content={content.intro}
             />
 

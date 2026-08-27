@@ -1,11 +1,11 @@
-import {cn} from "@/lib/utils/cn";
+import { cn } from "@/lib/utils/cn";
 
 import SparkleDivider from "@/ui/components/utils/SparkleDivider";
 
-export default function VerstehenIntro({
-                                           content,
-                                           className,
-                                       }) {
+export default function PageIntro({
+                                      content,
+                                      className,
+                                  }) {
     return (
         <section
             className={cn(
@@ -32,7 +32,7 @@ export default function VerstehenIntro({
                     "text-[#827d87]",
                     "tracking-tight",
                     "leading-[1.4]",
-                    "whitespace-pre-line"
+                    "whitespace-pre-line",
                 )}
             >
                 {content.statement}
@@ -44,7 +44,7 @@ export default function VerstehenIntro({
                     "font-accent italic",
                     "text-[#c8a56e]",
                     "leading-relaxed",
-                    "text-4xl"
+                    "text-4xl",
                 )}
             >
                 {content.subline}
