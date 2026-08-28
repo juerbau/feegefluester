@@ -11,6 +11,7 @@
 
   --font-body: var(--font-nunito);
   --font-accent: var(--font-cormorant);
+  --font-shadowsIntoLight: var(--font-shadowsIntoLight);
 }
 
 body {

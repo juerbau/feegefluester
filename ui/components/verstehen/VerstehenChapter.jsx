@@ -13,7 +13,7 @@ export default function VerstehenChapter({
                 className
             )}
         >
-            <PageContentWidth width="default">
+            <PageContentWidth width="hero">
                 <div className="px-30">
                     <h2
                         className={cn(

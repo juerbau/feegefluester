@@ -1,4 +1,4 @@
-import hero from "@/ui/images/hero/Hero-neu_2.png";
+import hero from "@/ui/images/hero/hero-desktop-champagner.png";
 import Image from "next/image";
 import HomeHeroIntro from "@/ui/components/home/HomeHeroIntro";
 import HomeHeroClaim from "@/ui/components/home/HomeHeroClaim";

@@ -20,12 +20,12 @@ const navigation = [
         href: "/verstehen",
     },
     {
-        label: "Über mich",
-        href: "/ueber-mich",
+        label: "Verbinden",
+        href: "/begleitung",
     },
     {
-        label: "Begleitung",
-        href: "/begleitung",
+        label: "Vertrauen",
+        href: "/ueber-mich",
     },
     {
         label: "Kontakt",
