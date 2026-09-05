@@ -1,4 +1,4 @@
-import { cn } from "@/lib/utils/cn";
+import {cn} from "@/lib/utils/cn";
 
 import SparkleDivider from "@/ui/components/utils/SparkleDivider";
 
@@ -9,76 +9,55 @@ export default function PageIntro({
     return (
         <section
             className={cn(
-                "mx-auto h-160",
-                "flex flex-col items-center",
-                "px-6",
-                "pb-20",
-                "pt-20",
-                "text-center",
+                "h-160",
                 "bg-[#c8beae]/50",
+                "px-6",
                 className
             )}
         >
-            <SparkleDivider
-                size={35}
-                count={1}
-                className="my-12"
-            />
-
-            {/*<h1*/}
-            {/*    className={cn(*/}
-            {/*        "mt-8",*/}
-            {/*        "font-caveat font-light",*/}
-            {/*        "text-5xl",*/}
-            {/*        "text-[#827d87]",*/}
-            {/*        "tracking-tight",*/}
-            {/*        "leading-[1.4]",*/}
-            {/*        "whitespace-pre-line",*/}
-            {/*    )}*/}
-            {/*>*/}
-            {/*    {content.statement}*/}
-            {/*</h1>*/}
-            <h1
+            <div
                 className={cn(
-                    "mt-8",
-                    "font-accent",
-                    "text-5xl",
-                    "text-[#827d87]",
-                    "tracking-tight",
-                    "leading-[1.4]",
-                    "whitespace-pre-line",
+                    "mx-auto h-full",
+                    "flex flex-col items-center justify-center",
+                    "text-center"
                 )}
             >
-                {content.statement}
-            </h1>
+                <SparkleDivider
+                    size={35}
+                    count={1}
+                />
 
-            {/*<p*/}
-            {/*    className={cn(*/}
-            {/*        "mt-7",*/}
-            {/*        "font-accent italic",*/}
-            {/*        "text-[#c8a56e]",*/}
-            {/*        "leading-relaxed",*/}
-            {/*        "text-4xl",*/}
-            {/*    )}*/}
-            {/*>*/}
-            {/*    {content.subline}*/}
-            {/*</p>*/}
-            <p
-                className={cn(
-                    "mt-7",
-                    "font-shadowsIntoLight",
-                    "text-[#c8a56e]",
-                    "leading-relaxed",
-                    "text-4xl",
-                )}
-            >
-                {content.subline}
-            </p>
+                <h1
+                    className={cn(
+                        "mt-14",
+                        "font-accent",
+                        "text-5xl",
+                        "text-[#827d87]",
+                        "tracking-tight",
+                        "leading-[1.4]",
+                        "whitespace-pre-line"
+                    )}
+                >
+                    {content.statement}
+                </h1>
 
-            <SparkleDivider
-                size={16}
-                className="my-12"
-            />
+                <p
+                    className={cn(
+                        "mt-7",
+                        "font-handwrite",
+                        "text-4xl",
+                        "text-[#c8a56e]",
+                        "leading-relaxed"
+                    )}
+                >
+                    {content.subline}
+                </p>
+
+                <SparkleDivider
+                    size={16}
+                    className="mt-14"
+                />
+            </div>
         </section>
     );
 }

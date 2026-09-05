@@ -75,7 +75,7 @@ export default function Header() {
                                         href={item.href}
                                         className={cn(
                                             "relative py-2",
-                                            "text-lg tracking-[0.04em]",
+                                            "text-xl tracking-[0.04em]",
                                             "transition-colors duration-300",
                                             isActive
                                                 ? "text-[#c8a56e]"

@@ -1,64 +1,76 @@
-import {cn} from "@/lib/utils/cn";
 import {Fragment} from "react";
 import {IconSparkle} from "@tabler/icons-react";
 
+import {cn} from "@/lib/utils/cn";
 
-export default function HomeHeroIntro({className, content}) {
+export default function HomeHeroIntro({
+                                          className,
+                                          content,
+                                      }) {
     return (
         <div
             className={cn(
                 "absolute z-10",
-                "left-[6%] top-[18%]",
-                "w-[46%] max-w-3xl",
+                "left-[5%] top-[18%]",
+                "w-[44%] max-w-3xl",
+                "flex flex-col items-center",
+                "text-center",
                 className
             )}
         >
             <h1
                 className={cn(
-                    "font-accent",
-                    "font-light",
+                    "font-body font-light",
                     "tracking-[-0.035em]",
                     "text-[#827d87]",
-                    "text-[clamp(2.5rem,4.8vw,5rem)]"
+                    "text-7xl"
                 )}
             >
-                <span className="block leading-normal">
-                    {content.title.firstLine}
-                </span>
+    <span className="block leading-[1.1]">
+        {content.title.firstLine}
+    </span>
 
-                <span
-                    className={cn(
-                        "block",
-                        "leading-none",
-                        "-mt-[clamp(0.25rem,0.8vw,0.75rem)]"
-                    )}
-                >
-                    {content.title.secondLinePrefix}
+                <span className="mt-2 block leading-[1.1]">
+        {content.title.secondLinePrefix}
+
                     <span
                         className={cn(
-                            "pl-1.5",
-                            "font-medium italic",
+                            "pl-5",
+                            "text-[90px]",
+                            "font-accent font-medium italic",
                             "tracking-[-0.02em]",
                             "text-[#c8a56e]"
                         )}
                     >
-                        {content.title.highlight}
-                    </span>
-                </span>
-
+            {content.title.highlight}
+        </span>
+    </span>
             </h1>
 
-            <div className="flex items-center gap-2 mt-15 text-[#c8a56e]/90">
+            <div
+                className={cn(
+                    "mt-15",
+                    "flex items-center justify-center",
+                    "gap-2",
+                    "text-[#c8a56e]/90"
+                )}
+            >
                 {content.eyebrow.map((item, index) => (
                     <Fragment key={item}>
                         {index > 0 && (
                             <IconSparkle
-                                className="size-4 text-[#c8a56e] -translate-y-px"
+                                className={cn(
+                                    "size-4",
+                                    "-translate-y-px",
+                                    "text-[#c8a56e]"
+                                )}
                                 stroke={1.25}
                             />
                         )}
 
-                        <span className="text-xl">{item}</span>
+                        <span className="text-2xl">
+                            {item}
+                        </span>
                     </Fragment>
                 ))}
             </div>
@@ -66,11 +78,11 @@ export default function HomeHeroIntro({className, content}) {
             <p
                 className={cn(
                     "mt-15",
-                    "max-w-xl",
-                    "text-[#827d87]",
-                    "font-light",
+                    "mx-auto max-w-xl",
+                    "font-handwrite",
                     "leading-relaxed",
-                    "text-2xl",
+                    "text-3xl",
+                    "text-[#827d87]",
                     "whitespace-pre-line"
                 )}
             >
