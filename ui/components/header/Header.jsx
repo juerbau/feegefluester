@@ -21,11 +21,11 @@ const navigation = [
     },
     {
         label: "Verbinden",
-        href: "/begleitung",
+        href: "/verbinden",
     },
     {
         label: "Vertrauen",
-        href: "/ueber-mich",
+        href: "/vertrauen",
     },
     {
         label: "Kontakt",

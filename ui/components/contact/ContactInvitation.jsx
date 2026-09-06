@@ -33,6 +33,16 @@ export default function ContactInvitation({ content }) {
                             </p>
                         ))}
                     </div>
+                    <p
+                        className={cn(
+                            "mt-10",
+                            "font-accent italic",
+                            "text-[#c8a56e]",
+                            "text-4xl"
+                        )}
+                    >
+                        {content.quote}
+                    </p>
                 </div>
             </PageContentWidth>
 

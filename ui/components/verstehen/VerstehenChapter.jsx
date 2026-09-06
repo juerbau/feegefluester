@@ -21,14 +21,35 @@ export default function VerstehenChapter({
                             "text-[#827d87]",
                             "tracking-tight",
                             "leading-tight",
-                            "text-4xl"
+                            "text-[clamp(2rem,3vw,3rem)]",
                         )}
                     >
                         {content.title}
                     </h2>
+                    <h3
+                        className={cn(
+                            "text-[clamp(1rem,2vw,2rem)]",
+                            "mt-5",
+                            "leading-tight",
+                            "text-[#827d87]"
+                        )}
+                    >
+                        {content.subtitle}
+                    </h3>
+
+                    <p
+                        className={cn(
+                            "text-2xl",
+                            "leading-relaxed",
+                            "text-[#827d87]",
+                            "mt-10"
+                        )}
+                    >
+                        {content.innerVoice}
+                    </p>
 
                     {content.situations?.length > 0 && (
-                        <div className="mt-12 space-y-5">
+                        <div className="mt-12 pl-5 space-y-5">
                             {content.situations.map((situation) => (
                                 <p
                                     key={situation}

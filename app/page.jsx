@@ -4,6 +4,7 @@ import {homeContent} from "@/lib/content/homeContent";
 import HomeHero from "@/ui/components/home/HomeHero";
 import PageContentWidth from "@/ui/components/utils/PageContentWidth";
 import HomeStory from "@/ui/components/home/HomeStory";
+import PageIntro from "@/ui/components/common/PageIntro";
 
 const TEST_QUERY = `*[_type == "test"]{_id, title}`;
 
@@ -18,8 +19,12 @@ export default async function HomePage() {
             <HomeHero
                 content={content.hero}
             />
-            <PageContentWidth width="hero">
 
+            <PageIntro
+                content={content.intro}
+                className="bg-[#ffffff] h-120"
+            />
+            <PageContentWidth width="hero">
 
 
                 <HomeStory

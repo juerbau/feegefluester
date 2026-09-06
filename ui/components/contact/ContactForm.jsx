@@ -1,12 +1,12 @@
 "use client";
 
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
+import {useForm} from "react-hook-form";
+import {zodResolver} from "@hookform/resolvers/zod";
 
-import { cn } from "@/lib/utils/cn";
-import { contactSchema } from "@/lib/validation/contactSchema";
+import {cn} from "@/lib/utils/cn";
+import {contactSchema} from "@/lib/validation/contactSchema";
 
-import MainButton from "@/ui/components/MainButton";
+import MainButton from "@/ui/components/common/MainButton";
 import PageContentWidth from "@/ui/components/utils/PageContentWidth";
 
 export default function ContactForm({
@@ -57,142 +57,128 @@ export default function ContactForm({
             )}
         >
             <PageContentWidth width="narrow">
-                <div>
-                    <h2
-                        className={cn(
-                            "font-accent font-light",
-                            "text-4xl",
-                            "tracking-tight",
-                            "leading-tight",
-                            "text-[#827d87]"
+                <form
+                    onSubmit={handleSubmit(onSubmit)}
+                    className="mt-14 space-y-8"
+                    noValidate
+                >
+                    {/* Name */}
+
+                    <div>
+                        <label
+                            htmlFor="name"
+                            className="mb-2 block text-base text-[#827d87]"
+                        >
+                            Name
+                        </label>
+
+                        <input
+                            id="name"
+                            type="text"
+                            autoComplete="name"
+                            {...register("name")}
+                            className={inputClasses}
+                        />
+
+                        {errors.name && (
+                            <p className="mt-2 text-sm text-[#b8860b]">
+                                {errors.name.message}
+                            </p>
                         )}
-                    >
-                        {content.title}
-                    </h2>
+                    </div>
 
-                    <form
-                        onSubmit={handleSubmit(onSubmit)}
-                        className="mt-14 space-y-8"
-                        noValidate
-                    >
-                        {/* Name */}
+                    {/* E-Mail */}
 
-                        <div>
-                            <label
-                                htmlFor="name"
-                                className="mb-2 block text-base text-[#827d87]"
-                            >
-                                Name
-                            </label>
+                    <div>
+                        <label
+                            htmlFor="email"
+                            className="mb-2 block text-base text-[#827d87]"
+                        >
+                            E-Mail
+                        </label>
 
-                            <input
-                                id="name"
-                                type="text"
-                                autoComplete="name"
-                                {...register("name")}
-                                className={inputClasses}
-                            />
+                        <input
+                            id="email"
+                            type="email"
+                            autoComplete="email"
+                            {...register("email")}
+                            className={inputClasses}
+                        />
 
-                            {errors.name && (
-                                <p className="mt-2 text-sm text-[#b8860b]">
-                                    {errors.name.message}
-                                </p>
-                            )}
-                        </div>
+                        {errors.email && (
+                            <p className="mt-2 text-sm text-[#b8860b]">
+                                {errors.email.message}
+                            </p>
+                        )}
+                    </div>
 
-                        {/* E-Mail */}
+                    {/* Telefon */}
 
-                        <div>
-                            <label
-                                htmlFor="email"
-                                className="mb-2 block text-base text-[#827d87]"
-                            >
-                                E-Mail
-                            </label>
-
-                            <input
-                                id="email"
-                                type="email"
-                                autoComplete="email"
-                                {...register("email")}
-                                className={inputClasses}
-                            />
-
-                            {errors.email && (
-                                <p className="mt-2 text-sm text-[#b8860b]">
-                                    {errors.email.message}
-                                </p>
-                            )}
-                        </div>
-
-                        {/* Telefon */}
-
-                        <div>
-                            <label
-                                htmlFor="phone"
-                                className="mb-2 block text-base text-[#827d87]"
-                            >
-                                Telefon
-                                <span className="ml-2 text-sm text-[#b7b2bc]">
+                    <div>
+                        <label
+                            htmlFor="phone"
+                            className="mb-2 block text-base text-[#827d87]"
+                        >
+                            Telefon
+                            <span className="ml-2 text-sm text-[#b7b2bc]">
                                     (optional)
                                 </span>
-                            </label>
+                        </label>
 
-                            <input
-                                id="phone"
-                                type="tel"
-                                autoComplete="tel"
-                                {...register("phone")}
-                                className={inputClasses}
-                            />
+                        <input
+                            id="phone"
+                            type="tel"
+                            autoComplete="tel"
+                            {...register("phone")}
+                            className={inputClasses}
+                        />
 
-                            {errors.phone && (
-                                <p className="mt-2 text-sm text-[#b8860b]">
-                                    {errors.phone.message}
-                                </p>
+                        {errors.phone && (
+                            <p className="mt-2 text-sm text-[#b8860b]">
+                                {errors.phone.message}
+                            </p>
+                        )}
+                    </div>
+
+                    {/* Nachricht */}
+
+                    <div>
+                        <label
+                            htmlFor="message"
+                            className="mb-2 block text-base text-[#827d87]"
+                        >
+                            Nachricht
+                        </label>
+
+                        <textarea
+                            id="message"
+                            rows={8}
+                            {...register("message")}
+                            className={cn(
+                                inputClasses,
+                                "min-h-56 resize-y",
+                                "leading-relaxed"
                             )}
-                        </div>
+                        />
 
-                        {/* Nachricht */}
+                        {errors.message && (
+                            <p className="mt-2 text-sm text-[#b8860b]">
+                                {errors.message.message}
+                            </p>
+                        )}
+                    </div>
 
-                        <div>
-                            <label
-                                htmlFor="message"
-                                className="mb-2 block text-base text-[#827d87]"
-                            >
-                                Nachricht
-                            </label>
-
-                            <textarea
-                                id="message"
-                                rows={8}
-                                {...register("message")}
-                                className={cn(
-                                    inputClasses,
-                                    "min-h-56 resize-y",
-                                    "leading-relaxed"
-                                )}
-                            />
-
-                            {errors.message && (
-                                <p className="mt-2 text-sm text-[#b8860b]">
-                                    {errors.message.message}
-                                </p>
-                            )}
-                        </div>
-
-                        <div className="flex justify-end pt-6">
-                            <MainButton
-                                type="submit"
-                                disabled={isSubmitting}
-                            >
-                                {isSubmitting
-                                    ? "Nachricht wird gesendet..."
-                                    : "Nachricht senden"}
-                            </MainButton>
-                        </div>
-                    </form>
-                </div>
+                    <div className="flex justify-end pt-6">
+                        <MainButton
+                            type="submit"
+                            disabled={isSubmitting}
+                        >
+                            {isSubmitting
+                                ? "Nachricht wird gesendet..."
+                                : "Nachricht senden"}
+                        </MainButton>
+                    </div>
+                </form>
             </PageContentWidth>
         </section>
     );

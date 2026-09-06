@@ -2,6 +2,7 @@ import {nunito, cormorant, shadowsIntoLight} from "@/lib/fonts";
 import "@/app/globals.css";
 
 import Header from "@/ui/components/header/Header";
+import Footer from "@/ui/components/footer/Footer";
 
 export default function RootLayout({children}) {
     return (
@@ -14,6 +15,7 @@ export default function RootLayout({children}) {
         <main>
             {children}
         </main>
+        <Footer />
         </body>
         </html>
     );

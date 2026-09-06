@@ -1,7 +1,6 @@
 import hero from "@/ui/images/hero/Hero-neu_7.png";
 import Image from "next/image";
 import HomeHeroIntro from "@/ui/components/home/HomeHeroIntro";
-import HomeHeroClaim from "@/ui/components/home/HomeHeroClaim";
 
 export default function HomeHero({content}) {
     return (
@@ -24,9 +23,6 @@ export default function HomeHero({content}) {
                 />
             </section>
 
-            <HomeHeroClaim
-                content={content.claim}
-            />
         </>
     );
 }

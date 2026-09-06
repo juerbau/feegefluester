@@ -1,8 +1,5 @@
 import {cn} from "@/lib/utils/cn";
-
-import StoryTransition from "@/ui/components/StoryTransition";
-import MainButton from "@/ui/components/MainButton";
-import {IconSparkle} from "@tabler/icons-react";
+import MainButton from "@/ui/components/common/MainButton";
 
 export default function HomeStory({
                                       story,
@@ -20,6 +17,7 @@ export default function HomeStory({
 
             <h2
                 className={cn(
+                    "font-accent",
                     "text-[clamp(2rem,3vw,3rem)]",
                     "leading-tight",
                     "text-[#827d87]"
@@ -27,6 +25,17 @@ export default function HomeStory({
             >
                 {story.title}
             </h2>
+
+            <h3
+                className={cn(
+                    "text-[clamp(1rem,2vw,2rem)]",
+                    "mt-5",
+                    "leading-tight",
+                    "text-[#827d87]"
+                )}
+            >
+                {story.subtitle}
+            </h3>
 
             {/* InnerVoice */}
 
@@ -36,6 +45,7 @@ export default function HomeStory({
                     "space-y-8"
                 )}
             >
+
                 <p
                     className={cn(
                         "text-[clamp(1.15rem,1.4vw,1.4rem)]",
@@ -69,30 +79,27 @@ export default function HomeStory({
                 </p>
             </div>
 
-            {/* Perspektivwechsel */}
-
-            {/*<StoryTransition*/}
-            {/*    className="my-15"*/}
-            {/*/>*/}
-
 
             {/* Guidance */}
 
             <div
                 className={cn(
                     "space-y-8",
+                    "mt-10"
                 )}
             >
-                <p
-                    className={cn(
-                        "text-[clamp(1.15rem,1.4vw,1.4rem)]",
-                        "leading-relaxed",
-                        "text-[#827d87]",
-                        "mt-10"
-                    )}
-                >
-                    {story.guidance}
-                </p>
+                {story.guidance.map((paragraph) => (
+                    <p
+                        key={paragraph}
+                        className={cn(
+                            "text-[clamp(1.15rem,1.4vw,1.4rem)]",
+                            "leading-relaxed",
+                            "text-[#827d87]"
+                        )}
+                    >
+                        {paragraph}
+                    </p>
+                ))}
             </div>
 
             {/* CTA */}
