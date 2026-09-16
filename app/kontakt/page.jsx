@@ -15,7 +15,7 @@ export default function KontaktPage() {
 
             <ContactInvitation content={content.invitation} />
 
-            <ContactForm content={content.form} />
+            <ContactForm />
 
         </main>
     );

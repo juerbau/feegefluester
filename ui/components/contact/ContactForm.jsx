@@ -10,7 +10,6 @@ import MainButton from "@/ui/components/common/MainButton";
 import PageContentWidth from "@/ui/components/utils/PageContentWidth";
 
 export default function ContactForm({
-                                        content,
                                         className,
                                     }) {
     const inputClasses = cn(
@@ -46,7 +45,22 @@ export default function ContactForm({
     });
 
     async function onSubmit(data) {
-        console.log(data);
+        const response = await fetch("/api/contact", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data),
+        });
+
+        const result = await response.json();
+
+        if (!response.ok) {
+            console.error("Kontaktformular Fehler:", result);
+            return;
+        }
+
+        console.log("Kontaktformular erfolgreich:", result);
     }
 
     return (
