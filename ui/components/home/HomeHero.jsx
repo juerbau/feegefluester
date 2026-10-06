@@ -1,28 +1,15 @@
-import hero from "@/ui/images/hero/Hero-neu_7.png";
-import Image from "next/image";
+import HomeHeroImages from "@/ui/components/home/HomeHeroImages";
 import HomeHeroIntro from "@/ui/components/home/HomeHeroIntro";
 
-export default function HomeHero({content}) {
+export default function HomeHero({ content }) {
     return (
-        <>
-            <section
-                className="relative mx-auto overflow-hidden"
-                aria-labelledby="home-hero-title"
-            >
-                <Image
-                    src={hero}
-                    alt=""
-                    priority
-                    sizes="(min-width: 1536px) 1536px, 100vw"
-                    className="block h-auto w-full"
-                />
+        <section className="relative w-full overflow-hidden">
+            <HomeHeroImages />
 
-                <HomeHeroIntro
-                    content={content}
-                    className="font-body"
-                />
-            </section>
-
-        </>
+            <HomeHeroIntro
+                content={content}
+                className="z-10"
+            />
+        </section>
     );
 }

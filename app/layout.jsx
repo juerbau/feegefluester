@@ -1,4 +1,4 @@
-import {nunito, cormorant, shadowsIntoLight} from "@/lib/fonts";
+import {cormorant, quicksand, dancingScript} from "@/lib/fonts";
 import "@/app/globals.css";
 
 import Header from "@/ui/components/header/Header";
@@ -8,7 +8,7 @@ export default function RootLayout({children}) {
     return (
         <html lang="de">
         <body
-            className={`${nunito.variable} ${cormorant.variable} ${shadowsIntoLight.variable} font-body`}
+            className={`${quicksand.variable} ${cormorant.variable} ${dancingScript.variable} font-body`}
         >
         <Header />
 

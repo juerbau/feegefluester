@@ -9,7 +9,7 @@ export default function Footer({ className }) {
         <footer
             className={cn(
                 "mt-24",
-                "bg-[#e4dfd6]",
+                "bg-[#afbdaf]",
                 className
             )}
         >
