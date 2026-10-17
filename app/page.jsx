@@ -5,6 +5,14 @@ import HomeHero from "@/ui/components/home/HomeHero";
 import PageContentWidth from "@/ui/components/utils/PageContentWidth";
 import HomeStory from "@/ui/components/home/HomeStory";
 import PageIntro from "@/ui/components/common/PageIntro";
+import HomeTopics from "@/ui/components/home/HomeTopics";
+import HomeQuote from "@/ui/components/home/HomeQuote";
+import HomeIntroduction from "@/ui/components/home/HomeIntroduction";
+import SparkleDivider from "@/ui/components/utils/SparkleDivider";
+import SectionTransition from "@/ui/components/utils/SectionTransition";
+import HomeAbout from "@/ui/components/home/HomeAbout";
+import SectionSpacer from "@/ui/components/utils/SectionSpacer";
+import HomeContact from "@/ui/components/home/HomeContact";
 
 const TEST_QUERY = `*[_type == "test"]{_id, title}`;
 
@@ -20,19 +28,40 @@ export default async function HomePage() {
                 content={content.hero}
             />
 
-            <PageIntro
-                content={content.intro}
-                className="bg-[#ffffff] h-120"
-            />
-            <PageContentWidth width="hero">
+            <HomeTopics />
+
+            <SectionSpacer />
+
+            <HomeIntroduction />
+
+            <SectionSpacer />
+
+            <HomeAbout />
+
+            <SectionSpacer />
+
+            <HomeStory />
+
+            <SectionSpacer />
+
+            <HomeContact />
+
+            <SectionSpacer />
+            {/*<HomeQuote />*/}
+
+            {/*<PageIntro*/}
+            {/*    content={content.intro}*/}
+            {/*    className="bg-[#ffffff] h-120"*/}
+            {/*/>*/}
+            {/*<PageContentWidth width="hero">*/}
 
 
-                <HomeStory
-                    story={content.stories[0]}
-                    className="px-25 font-body"
-                />
+            {/*    <HomeStory*/}
+            {/*        story={content.stories[0]}*/}
+            {/*        className="px-25 font-body"*/}
+            {/*    />*/}
 
-            </PageContentWidth>
+            {/*</PageContentWidth>*/}
 
             {/*<br />*/}
             {/*<br />*/}

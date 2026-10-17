@@ -1,20 +1,16 @@
 "use client";
 
-import {useState} from "react";
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import {usePathname} from "next/navigation";
-import {motion} from "motion/react";
-import {Menu, X} from "lucide-react";
+import { usePathname } from "next/navigation";
+import { motion } from "motion/react";
+import { Menu, X } from "lucide-react";
 
 import logo from "@/ui/images/logo/feegefluester-header-subtitle-larger-v2.svg";
-import {cn} from "@/lib/utils/cn";
+import { cn } from "@/lib/utils/cn";
 
 const navigation = [
-    {
-        label: "Home",
-        href: "/",
-    },
     {
         label: "Verstehen",
         href: "/verstehen",
@@ -26,6 +22,10 @@ const navigation = [
     {
         label: "Vertrauen",
         href: "/vertrauen",
+    },
+    {
+        label: "Warum Feegeflüster",
+        href: "/warum-feegefluester",
     },
     {
         label: "Kontakt",
@@ -44,11 +44,17 @@ export default function Header() {
     return (
         <header className="relative z-50 mx-auto max-w-384 py-3 pr-5">
             <div className="flex items-center justify-between">
+
+                {/* Logo */}
+
                 <Link
                     href="/"
                     onClick={closeMenu}
                     aria-label="Feegeflüster Startseite"
-                    className="relative block w-64 sm:w-72 lg:w-100"
+                    className={cn(
+                        "relative block shrink-0",
+                        "w-[clamp(16rem,25vw,25rem)]"
+                    )}
                 >
                     <Image
                         src={logo}
@@ -58,11 +64,21 @@ export default function Header() {
                     />
                 </Link>
 
+                {/* Desktop-Navigation */}
+
                 <nav
                     aria-label="Hauptnavigation"
-                    className="ml-20 hidden lg:block xl:ml-28"
+                    className={cn(
+                        "hidden lg:block",
+                        "ml-[clamp(0.75rem,2vw,3rem)]"
+                    )}
                 >
-                    <ul className="flex items-center gap-8 xl:gap-15">
+                    <ul
+                        className={cn(
+                            "flex items-center",
+                            "gap-[clamp(0.75rem,1.8vw,3rem)]"
+                        )}
+                    >
                         {navigation.map((item) => {
                             const isActive = pathname === item.href;
 
@@ -73,13 +89,22 @@ export default function Header() {
                                 >
                                     <Link
                                         href={item.href}
+                                        aria-current={
+                                            isActive
+                                                ? "page"
+                                                : undefined
+                                        }
                                         className={cn(
                                             "relative py-2",
-                                            "text-xl tracking-[0.04em]",
+                                            "text-[clamp(1rem,0.3333rem+1.0417vw,1.375rem)]",
+                                            "tracking-[0.04em]",
+                                            "whitespace-nowrap",
                                             "transition-colors duration-300",
+
                                             isActive
                                                 ? "text-[#c8a56e]"
                                                 : "text-[#827d87] hover:text-[#c8a56e]",
+
                                             !isActive &&
                                             "after:absolute after:inset-x-0 after:-bottom-0.5 after:h-px after:origin-center after:scale-x-0 after:bg-[#c8a56e] after:transition-transform after:duration-300 hover:after:scale-x-100"
                                         )}
@@ -104,17 +129,22 @@ export default function Header() {
                     </ul>
                 </nav>
 
+                {/* Hamburger-Button */}
+
                 <button
                     type="button"
-                    onClick={() => setMenuOpen((current) => !current)}
+                    onClick={() =>
+                        setMenuOpen((current) => !current)
+                    }
                     aria-label={
                         menuOpen
                             ? "Navigation schließen"
                             : "Navigation öffnen"
                     }
                     aria-expanded={menuOpen}
+                    aria-controls="mobile-navigation"
                     className={cn(
-                        "flex size-11 items-center justify-center",
+                        "flex size-11 shrink-0 items-center justify-center",
                         "text-[#827d87]",
                         "transition-colors duration-300",
                         "hover:text-[#c8a56e]",
@@ -135,12 +165,16 @@ export default function Header() {
                 </button>
             </div>
 
+            {/* Mobile Navigation */}
+
             <div
+                id="mobile-navigation"
                 className={cn(
                     "absolute inset-x-0 top-full overflow-hidden",
                     "bg-background",
                     "transition-[max-height,opacity] duration-500 ease-in-out",
                     "lg:hidden",
+
                     menuOpen
                         ? "max-h-96 opacity-100"
                         : "pointer-events-none max-h-0 opacity-0"
@@ -165,9 +199,16 @@ export default function Header() {
                                     <Link
                                         href={item.href}
                                         onClick={closeMenu}
+                                        aria-current={
+                                            isActive
+                                                ? "page"
+                                                : undefined
+                                        }
                                         className={cn(
                                             "block py-4",
-                                            "text-base tracking-[0.04em] transition-colors duration-300",
+                                            "text-base tracking-[0.04em]",
+                                            "transition-colors duration-300",
+
                                             isActive
                                                 ? "text-[#c8a56e]"
                                                 : "text-[#827d87] hover:text-[#c8a56e]"

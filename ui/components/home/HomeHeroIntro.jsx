@@ -1,112 +1,157 @@
 import { cn } from "@/lib/utils/cn";
-
 import MainButton from "@/ui/components/common/MainButton";
 
 export default function HomeHeroIntro({
                                           className,
                                           content,
+                                          mobile = false,
                                       }) {
     return (
         <div
             className={cn(
-                "absolute z-10",
-
-                // Position
-                "left-[clamp(1.5rem,8vw,10rem)]",
-                "top-1/2",
-                "-translate-y-1/2",
-
-                // Breite
-                // "max-w-xl",
-
+                "z-10",
                 "flex flex-col items-start",
                 "text-left",
+
+                mobile
+                    ? [
+                        "relative",
+                        "mx-auto",
+                        "w-full",
+                        "max-w-lg",
+                    ]
+                    : [
+                        "absolute",
+
+                        // Horizontale Position
+                        "left-[clamp(1.5rem,8vw,10rem)]",
+
+                        // Vertikal zentrieren
+                        "top-1/2",
+                        "-translate-y-1/2",
+
+                        // Responsive Breite
+                        "w-[clamp(20rem,40vw,42rem)]",
+                    ],
 
                 className
             )}
         >
-            {/* Title */}
+
+            {/* ----------------------------------------
+                Überschrift
+            ---------------------------------------- */}
 
             <h1
                 className={cn(
-                    "font-body",
-
-                    "text-[clamp(1.000rem,-0.38rem+5.50vw,3.750rem)]",
-                    "w-[clamp(12.500rem,-6.25rem+75.00vw,50.000rem)]",
-
+                    "font-body font-light",
+                    "leading-[1.05]",
+                    "tracking-[-0.035em]",
                     "text-[#827d87]",
-                    "whitespace-pre-line"
+                    "whitespace-pre-line",
+
+                    mobile
+                        ? [
+                            "text-[clamp(2.2rem,8vw,3.2rem)]",
+                        ]
+                        : [
+                            "text-[clamp(2.2rem,3.5vw,4.5rem)]",
+                        ]
                 )}
             >
                 {content.title}
             </h1>
 
-            {/* Handwritten statement */}
+
+            {/* ----------------------------------------
+                Goldene Handschrift
+            ---------------------------------------- */}
 
             <p
                 className={cn(
-                    "mt-3",
-                    "pl-4",
-
                     "font-handwrite",
-
-                    "text-[clamp(1.000rem,0.00rem+4.00vw,3.000rem)]",
                     "leading-[1.05]",
-
                     "text-[#c8a56e]",
-                    "text-shadow-eyebrow",
                     "whitespace-pre-line",
 
-                    "md:mt-4",
-                    "md:pl-8",
+                    mobile
+                        ? [
+                            "mt-5",
+                            "pl-5",
+                            "text-[clamp(2.8rem,10vw,4rem)]",
+                        ]
+                        : [
+                            // Abstand skaliert mit
+                            "mt-[clamp(0.5rem,1vw,1.25rem)]",
 
-                    "lg:mt-5",
-                    "lg:pl-14"
+                            // Einrückung skaliert mit
+                            "pl-[clamp(1rem,3vw,3.5rem)]",
+
+                            // Schriftgröße skaliert mit
+                            "text-[clamp(2.5rem,4vw,5.25rem)]",
+                        ]
                 )}
             >
                 {content.eyebrow}
             </p>
 
-            {/* Subtitle */}
+
+            {/* ----------------------------------------
+                Untertitel
+            ---------------------------------------- */}
 
             <p
                 className={cn(
-                    "mt-6",
-                    "w-[clamp(9.375rem,-4.69rem+56.25vw,37.500rem)]",
-
                     "font-body font-medium",
-                    "text-[clamp(0.500rem,0.13rem+1.50vw,1.250rem)]",
-
-                    "leading-[1.6]",
-
                     "text-[#827d87]",
-                    "text-shadow-subtitle",
                     "whitespace-pre-line",
 
+                    mobile
+                        ? [
+                            "mt-7",
+                            "max-w-md",
+                            "text-base",
+                            "leading-[1.7]",
+                        ]
+                        : [
+                            // Abstand skaliert mit
+                            "mt-[clamp(1rem,2vw,2.5rem)]",
+
+                            // Breite
+                            "max-w-lg",
+
+                            // Schriftgröße
+                            "text-[clamp(0.85rem,1vw,1.5rem)]",
+
+                            // Kompaktere Zeilenhöhe
+                            "leading-[1.5]",
+                        ]
                 )}
             >
                 {content.subtitle}
             </p>
 
-            {/* CTA */}
+
+            {/* ----------------------------------------
+                Call-to-Action
+            ---------------------------------------- */}
 
             <MainButton
                 href={content.cta.href}
                 className={cn(
-                    "mt-6",
-                    "px-5 py-2.5",
-                    "text-sm",
-
-                    "md:mt-8",
-                    "md:px-6",
-
-                    "lg:mt-10",
-                    "lg:px-8",
-                    "lg:text-base"
+                    mobile
+                        ? [
+                            "mt-8",
+                        ]
+                        : [
+                            // Abstand skaliert mit
+                            "mt-[clamp(1rem,2vw,2.5rem)]",
+                        ]
                 )}
             >
                 {content.cta.label}
             </MainButton>
+
         </div>
     );
 }

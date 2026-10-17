@@ -9,6 +9,9 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
 
+  --color-champagner: #c8beaf;
+  --color-champagner-light: #e4dfd7;
+
   --font-body: var(--font-quicksand);
   --font-accent: var(--font-cormorant);
   --font-handwrite: var(--font-dancingScript);
