@@ -4,7 +4,7 @@ export default function SectionSpacer() {
     return (
         <div
             aria-hidden="true"
-            className="flex h-16 w-full items-center justify-center bg-white md:h-20"
+            className="flex h-14 w-full items-center justify-center bg-white"
         >
             <div className="flex w-full max-w-[640px] items-center justify-center gap-5 px-6">
 

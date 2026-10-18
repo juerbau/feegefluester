@@ -25,7 +25,7 @@ export default async function HomePage() {
     return (
         <main className="min-h-screen">
             <HomeHero
-                content={content.hero}
+                content={content}
             />
 
             <HomeTopics />

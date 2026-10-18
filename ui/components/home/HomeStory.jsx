@@ -1,5 +1,4 @@
 import MainButton from "@/ui/components/common/MainButton";
-import SparkleDivider from "@/ui/components/utils/SparkleDivider";
 
 export default function HomeStory() {
     return (
@@ -7,20 +6,31 @@ export default function HomeStory() {
             aria-labelledby="home-story-title"
             className="mx-auto w-full max-w-[1920px] bg-champagner-light"
         >
-
             <div
                 className={[
                     "mx-auto grid w-full max-w-7xl",
                     "grid-cols-1",
+
+                    // Mobile
                     "gap-10 px-6 pb-16 pt-10",
-                    "md:grid-cols-[0.85fr_1.15fr]",
-                    "md:gap-16",
+
+                    // Tablet: weiterhin einspaltig
+                    "md:px-10",
+
+                    // Desktop ab 1024 px
+                    "lg:grid-cols-[0.85fr_1.15fr]",
                     "lg:gap-24 lg:px-12 lg:pb-24 lg:pt-12",
                 ].join(" ")}
             >
-                {/* Linke Seite */}
+                {/* Überschrift */}
 
-                <div className="flex flex-col items-start">
+                <div
+                    className={[
+                        "mx-auto flex w-full max-w-xl flex-col items-start",
+                        "text-left",
+                        "lg:mx-0 lg:max-w-none",
+                    ].join(" ")}
+                >
                     <span
                         className={[
                             "font-handwrite",
@@ -49,15 +59,21 @@ export default function HomeStory() {
                     </h2>
                 </div>
 
-                {/* Rechte Seite */}
+                {/* Geschichte */}
 
-                <div className="flex flex-col items-start">
+                <div
+                    className={[
+                        "mx-auto flex w-full max-w-xl flex-col items-start",
+                        "text-left",
+                        "lg:mx-0 lg:max-w-none",
+                    ].join(" ")}
+                >
                     <div
                         className={[
-                            "max-w-2xl space-y-5",
+                            "w-full max-w-2xl space-y-5",
                             "font-body",
                             "text-[#827d87]",
-                            "text-[clamp(0.95rem,1.1vw,1.125rem)]",
+                            "text-[clamp(1.000rem,0.94rem+0.25vw,1.125rem)]",
                             "leading-[1.8]",
                         ].join(" ")}
                     >

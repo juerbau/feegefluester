@@ -3,18 +3,8 @@
 import HomeHeroImages from "@/ui/components/home/HomeHeroImages";
 import HomeHeroIntro from "@/ui/components/home/HomeHeroIntro";
 
-const content = {
-    title: "Jedes Tier hat etwas zu erzählen.",
-    eyebrow: "Ich helfe dir, zuzuhören.",
-    subtitle:
-        "Tierkommunikation verbindet Herzen.\nFür mehr Verständnis, Klarheit und ein harmonisches Miteinander.",
-    cta: {
-        label: "Mehr erfahren",
-        href: "/verstehen",
-    },
-};
 
-export default function HomeHero() {
+export default function HomeHero({content}) {
     return (
         <section
             aria-label="Willkommen bei Feegeflüster"
@@ -41,16 +31,16 @@ export default function HomeHero() {
                 {/* Desktop-Text über dem Bild */}
 
                 <HomeHeroIntro
-                    content={content}
+                    content={content.hero}
                     className="hidden lg:flex"
                 />
             </div>
 
             {/* Mobile: Text unter dem Bild */}
 
-            <div className="bg-[#e4dfd7] px-6 py-10 lg:hidden">
+            <div className="bg-champagner-light px-6 py-10 lg:hidden">
                 <HomeHeroIntro
-                    content={content}
+                    content={content.hero}
                     mobile
                 />
             </div>

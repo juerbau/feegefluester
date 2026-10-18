@@ -62,7 +62,7 @@ export default function HomeContact() {
                         mt-7
                         max-w-2xl
                         font-body
-                        text-[clamp(0.95rem,1.1vw,1.125rem)]
+                        text-[clamp(1.000rem,0.94rem+0.25vw,1.125rem)]
                         leading-[1.8]
                         text-[#827d87]
                         text-balance

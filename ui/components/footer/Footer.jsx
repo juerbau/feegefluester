@@ -23,18 +23,12 @@ export default function Footer() {
                     aria-hidden="true"
                 />
 
-                {/* Dezente Aufhellung */}
-                <div
-                    aria-hidden="true"
-                    className="pointer-events-none absolute inset-0 bg-[#f5f2ed]/10"
-                />
-
                 {/* Herzenssatz und Logo */}
                 <div
                     className="
                         relative z-10
                         mx-auto flex
-                        min-h-[400px]
+                        min-h-100
                         max-w-6xl
                         flex-col items-center
                         justify-start
@@ -93,7 +87,6 @@ export default function Footer() {
                             inline-block
                             transition-opacity
                             hover:opacity-85
-                            focus-visible:outline
                             focus-visible:outline-2
                             focus-visible:outline-offset-4
                             focus-visible:outline-[#c8a56e]
@@ -105,9 +98,9 @@ export default function Footer() {
                             alt="Feegeflüster – Tierkommunikation & Begleitung"
                             className="
                                 h-auto
-                                w-[240px]
+                                w-60
                                 sm:w-[320px]
-                                lg:w-[430px]
+                                lg:w-125
                             "
                             sizes="
                                 (max-width: 640px) 240px,
@@ -133,7 +126,7 @@ export default function Footer() {
                 >
 
                     {/* Copyright */}
-                    <p className="font-body text-lg font-medium text-[#5f5b63]">
+                    <p className="font-body text-lg font-medium text-[#827d87]">
                         © {new Date().getFullYear()} Feegeflüster
                     </p>
 
@@ -146,8 +139,8 @@ export default function Footer() {
                             href="/impressum"
                             className="
                                 font-body text-lg font-medium
-                                text-[#5f5b63]
-                                transition-colors hover:text-white
+                                text-[#827d87] hover:text-[#c8a56e]
+                                transition-colors
                             "
                         >
                             Impressum
@@ -157,8 +150,8 @@ export default function Footer() {
                             href="/datenschutz"
                             className="
                                 font-body text-lg font-medium
-                                text-[#5f5b63]
-                                transition-colors hover:text-white
+                                text-[#827d87] hover:text-[#c8a56e]
+                                transition-colors
                             "
                         >
                             Datenschutz

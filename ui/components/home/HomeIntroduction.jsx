@@ -1,7 +1,6 @@
 import Image from "next/image";
 
 import MainButton from "@/ui/components/common/MainButton";
-import SparkleDivider from "@/ui/components/utils/SparkleDivider";
 
 import catImage from "@/ui/images/katze-naehe.png";
 
@@ -11,20 +10,25 @@ export default function HomeIntroduction() {
             aria-labelledby="home-introduction-title"
             className="mx-auto w-full max-w-[1920px] bg-champagner-light"
         >
-
             <div
                 className={[
                     "mx-auto grid w-full max-w-7xl",
                     "grid-cols-1 items-center",
+
+                    // Mobile
                     "gap-10 px-6 pb-16 pt-10",
-                    "md:grid-cols-2 md:gap-12",
-                    "lg:gap-20 lg:px-12 lg:pb-24 lg:pt-12",
+
+                    // Tablet: weiterhin einspaltig
+                    "md:gap-12 md:px-10",
+
+                    // Desktop: zweispaltig ab 1024 px
+                    "lg:grid-cols-2 lg:gap-20",
+                    "lg:px-12 lg:pb-24 lg:pt-12",
                 ].join(" ")}
             >
-                {/* Katzenbild mit stärkerem Salbeigrün-Akzent */}
+                {/* Katzenbild mit Salbeigrün-Akzent */}
 
-                <div className="relative pb-8 pr-8">
-                    <div
+                <div className="relative mx-auto w-full max-w-[520px] pb-8 pr-8 lg:mx-0 lg:max-w-none">                    <div
                         aria-hidden="true"
                         className={[
                             "absolute bottom-0 right-0",
@@ -38,14 +42,20 @@ export default function HomeIntroduction() {
                             src={catImage}
                             alt="Eine Katze genießt die sanfte Berührung einer menschlichen Hand."
                             className="h-auto w-full"
-                            sizes="(min-width: 768px) 50vw, 100vw"
+                            sizes="(min-width: 1024px) 50vw, (min-width: 768px) 520px, (min-width: 568px) 520px, calc(100vw - 80px)"
                         />
                     </div>
                 </div>
 
                 {/* Text */}
 
-                <div className="flex flex-col items-start">
+                <div
+                    className={[
+                        "mx-auto flex w-full max-w-xl flex-col items-start",
+                        "text-left",
+                        "lg:mx-0 lg:max-w-none",
+                    ].join(" ")}
+                >
                     <h2
                         id="home-introduction-title"
                         className={[
@@ -64,10 +74,10 @@ export default function HomeIntroduction() {
 
                     <div
                         className={[
-                            "mt-7 max-w-xl space-y-5",
+                            "mt-7 w-full max-w-xl space-y-5",
                             "font-body",
                             "text-[#827d87]",
-                            "text-[clamp(0.95rem,1.1vw,1.125rem)]",
+                            "text-[clamp(1.000rem,0.94rem+0.25vw,1.125rem)]",
                             "leading-[1.8]",
                         ].join(" ")}
                     >

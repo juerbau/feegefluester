@@ -22,14 +22,11 @@ export default function HomeHeroIntro({
                     ]
                     : [
                         "absolute",
-
                         // Horizontale Position
                         "left-[clamp(1.5rem,8vw,10rem)]",
-
                         // Vertikal zentrieren
                         "top-1/2",
                         "-translate-y-1/2",
-
                         // Responsive Breite
                         "w-[clamp(20rem,40vw,42rem)]",
                     ],
@@ -105,12 +102,13 @@ export default function HomeHeroIntro({
                     "font-body font-medium",
                     "text-[#827d87]",
                     "whitespace-pre-line",
+                    "text-[clamp(1.000rem,0.94rem+0.25vw,1.125rem)]",
 
                     mobile
                         ? [
                             "mt-7",
                             "max-w-md",
-                            "text-base",
+                            // "text-base",
                             "leading-[1.7]",
                         ]
                         : [
@@ -121,10 +119,10 @@ export default function HomeHeroIntro({
                             "max-w-lg",
 
                             // Schriftgröße
-                            "text-[clamp(0.85rem,1vw,1.5rem)]",
+                            // "text-[clamp(0.85rem,1vw,1.5rem)]",
 
                             // Kompaktere Zeilenhöhe
-                            "leading-[1.5]",
+                            "leading-normal",
                         ]
                 )}
             >
