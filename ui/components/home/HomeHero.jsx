@@ -8,7 +8,7 @@ export default function HomeHero({content}) {
     return (
         <section
             aria-label="Willkommen bei Feegeflüster"
-            className="mx-auto w-full max-w-[1920px]"
+            className="w-full"
         >
             <div className="relative w-full overflow-hidden">
 

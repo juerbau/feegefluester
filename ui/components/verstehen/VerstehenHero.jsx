@@ -1,12 +1,12 @@
 import Image from "next/image";
 
-import heroImage from "@/ui/images/verstehen/verstehen-hero.jpg";
+import heroImage from "@/ui/images/verstehen/verstehen-hero.png";
 
 export default function VerstehenHero() {
     return (
         <section
             aria-labelledby="verstehen-hero-title"
-            className="mx-auto w-full max-w-[1920px] bg-champagner-light"
+            className="w-full bg-champagner-light"
         >
             <div
                 className={[
@@ -89,7 +89,7 @@ export default function VerstehenHero() {
                         className={[
                             "mt-9 max-w-xl",
                             "font-body text-[#827d87]",
-                            "text-[clamp(0.95rem,1.1vw,1.125rem)]",
+                            "text-[clamp(1.000rem,0.94rem+0.25vw,1.125rem)]",
                             "leading-[1.85]",
                         ].join(" ")}
                     >

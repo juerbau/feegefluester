@@ -3,6 +3,8 @@
 :root {
   --background: #ffffff;
   --foreground: #827d87;
+
+  --page-surround: #afbdaf;
 }
 
 @theme inline {
@@ -18,7 +20,7 @@
 }
 
 body {
-  background: var(--background);
+  background: var(--page-surround);
   color: var(--foreground);
 }
 

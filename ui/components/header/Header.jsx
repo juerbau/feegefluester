@@ -12,6 +12,10 @@ import { cn } from "@/lib/utils/cn";
 
 const navigation = [
     {
+        label: "Home",
+        href: "/",
+    },
+    {
         label: "Verstehen",
         href: "/verstehen",
     },
@@ -22,10 +26,6 @@ const navigation = [
     {
         label: "Vertrauen",
         href: "/vertrauen",
-    },
-    {
-        label: "Warum Feegeflüster",
-        href: "/warum-feegefluester",
     },
     {
         label: "Kontakt",
@@ -42,7 +42,7 @@ export default function Header() {
     }
 
     return (
-        <header className="relative z-50 mx-auto max-w-384 py-3 pr-5">
+        <header className="w-full relative z-50 mx-auto max-w-384 py-3 pr-5">
             <div className="flex items-center justify-between">
 
                 {/* Logo */}

@@ -28,7 +28,7 @@ export default function HomeTopics() {
     return (
         <section
             aria-label="Unsere Themen"
-            className="relative z-10 -mt-px mx-auto w-full max-w-[1920px] bg-champagner-light"
+            className="relative z-10 -mt-px w-full bg-champagner-light"
         >
             <div className="mx-auto grid max-w-7xl grid-cols-1 px-6 py-10 sm:grid-cols-3 lg:px-12 lg:py-12">
                 {topics.map((topic, index) => {

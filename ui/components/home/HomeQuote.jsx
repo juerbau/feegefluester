@@ -6,10 +6,8 @@ export default function HomeQuote() {
             aria-label="Ein Gedanke von Feegeflüster"
             className="
                 relative
-                mx-auto
                 mt-4
                 w-full
-                max-w-[1920px]
                 overflow-hidden
                 bg-[#f4f2ef]
             "

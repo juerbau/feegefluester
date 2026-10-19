@@ -8,7 +8,7 @@ export default function HomeIntroduction() {
     return (
         <section
             aria-labelledby="home-introduction-title"
-            className="mx-auto w-full max-w-[1920px] bg-champagner-light"
+            className="w-full bg-background"
         >
             <div
                 className={[

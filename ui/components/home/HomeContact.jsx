@@ -5,9 +5,7 @@ export default function HomeContact() {
         <section
             aria-labelledby="home-contact-title"
             className="
-                mx-auto
                 w-full
-                max-w-[1920px]
                 bg-champagner-light
             "
         >

@@ -30,19 +30,19 @@ export default async function HomePage() {
 
             <HomeTopics />
 
-            <SectionSpacer />
+            {/*<SectionSpacer />*/}
 
             <HomeIntroduction />
 
-            <SectionSpacer />
+            {/*<SectionSpacer />*/}
 
             <HomeAbout />
 
-            <SectionSpacer />
+            {/*<SectionSpacer />*/}
 
             <HomeStory />
 
-            <SectionSpacer />
+            {/*<SectionSpacer />*/}
 
             <HomeContact />
 

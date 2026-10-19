@@ -1,13 +1,13 @@
 import Image from "next/image";
-import Link from "next/link";
 
 import aboutImage from "@/ui/images/HomeAbout.png";
+import MainButton from "@/ui/components/common/MainButton";
 
 export default function HomeAbout() {
     return (
         <section
             aria-labelledby="home-about-title"
-            className="relative mx-auto w-full max-w-[1920px] overflow-hidden bg-champagner-light"
+            className="relative w-full overflow-hidden bg-champagner-light"
         >
             <div
                 className={[
@@ -65,9 +65,9 @@ export default function HomeAbout() {
                     <div
                         className={[
                             "mt-7 max-w-[520px] space-y-5",
-                            "font-body text-base leading-[1.9]",
+                            "font-body leading-[1.9]",
                             "text-[#827d87]",
-                            "sm:text-lg",
+                            "text-[clamp(1.000rem,0.94rem+0.25vw,1.125rem)]",
                         ].join(" ")}
                     >
                         <p>
@@ -89,26 +89,12 @@ export default function HomeAbout() {
                     </div>
 
                     {/* Button */}
-                    <div className="mt-9">
-                        <Link
-                            href="/warum-feegefluester"
-                            className={[
-                                "inline-flex items-center justify-center",
-                                "rounded-full border-[3px]",
-                                "border-[#e4dfd6] bg-[#c8a56e]",
-                                "px-8 py-3.5",
-                                "font-body text-base font-medium text-white",
-                                "transition-all duration-300",
-                                "hover:-translate-y-0.5 hover:shadow-lg",
-                                "focus-visible:outline",
-                                "focus-visible:outline-2",
-                                "focus-visible:outline-offset-4",
-                                "focus-visible:outline-[#c8a56e]",
-                            ].join(" ")}
-                        >
-                            Mehr über Feegeflüster erfahren
-                        </Link>
-                    </div>
+                    <MainButton
+                        href="/vertrauen"
+                        className="mt-9"
+                    >
+                        Manuela kennenlernen
+                    </MainButton>
                 </div>
 
                 {/* Bildbereich */}

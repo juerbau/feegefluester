@@ -4,7 +4,7 @@ export default function HomeStory() {
     return (
         <section
             aria-labelledby="home-story-title"
-            className="mx-auto w-full max-w-[1920px] bg-champagner-light"
+            className="w-full bg-background"
         >
             <div
                 className={[
@@ -117,7 +117,7 @@ export default function HomeStory() {
                         <p
                             className={[
                                 "font-handwrite",
-                                "text-[#827d87]",
+                                "text-white",
                                 "text-[clamp(1.625rem,1.38rem+1.00vw,2.125rem)]",
                                 "leading-[1.4]",
                             ].join(" ")}
@@ -128,7 +128,7 @@ export default function HomeStory() {
                     </blockquote>
 
                     <MainButton
-                        href="/verstehen"
+                        href="/verbinden#katzen-geschichte"
                         className="mt-9"
                     >
                         Die ganze Geschichte lesen

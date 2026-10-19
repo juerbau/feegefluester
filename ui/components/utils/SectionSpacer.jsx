@@ -1,10 +1,17 @@
 import { IconSparkle } from "@tabler/icons-react";
+import { cn } from "@/lib/utils/cn";
 
-export default function SectionSpacer() {
+export default function SectionSpacer({ variant = "white" }) {
     return (
         <div
             aria-hidden="true"
-            className="flex h-14 w-full items-center justify-center bg-white"
+            className={cn(
+                "flex h-14 w-full items-center justify-center",
+                {
+                    "bg-white": variant === "white",
+                    "bg-champagner-light": variant === "champagner",
+                }
+            )}
         >
             <div className="flex w-full max-w-[640px] items-center justify-center gap-5 px-6">
 
