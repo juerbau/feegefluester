@@ -1,7 +1,23 @@
-export default function BegleitungPage(){
+import VerbindenHero from "@/ui/components/verbinden/VerbindenHero";
+import VerbindenMiteinander from "@/ui/components/verbinden/VerbindenMiteinander";
+import VerbindenGeschichte from "@/ui/components/verbinden/VerbindenGeschichte";
+import SectionSpacer from "@/ui/components/utils/SectionSpacer";
+
+
+export default function VerbindenPage() {
+
     return (
-      <div className="mx-auto mt-30 text-center text-4xl text-black">
-          Coming soon...
-      </div>
+        <main className="min-h-screen">
+
+            <VerbindenHero/>
+
+            <VerbindenMiteinander />
+
+            <VerbindenGeschichte />
+
+            <SectionSpacer />
+
+
+        </main>
     );
 }
