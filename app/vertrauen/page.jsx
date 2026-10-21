@@ -1,3 +1,22 @@
-export default function UeberMichPage(){
-    return <h1 className="mx-auto mt-30 text-center text-3xl text-gray-800">Coming Soon...</h1>
+
+import VertrauenHero from "@/ui/components/vertrauen/VertrauenHero";
+import VertrauenWachsen from "@/ui/components/vertrauen/VertrauenWachsen";
+import VertrauenManuela from "@/ui/components/vertrauen/VertrauenManuela";
+import VertrauenBegleiter from "@/ui/components/vertrauen/VertrauenBegleiter";
+
+export const metadata = {
+    title: "Vertrauen | Feegeflüster",
+    description:
+        "Lerne Manuela und ihre Haltung zur Tierkommunikation kennen. Erfahre, wie Vertrauen zwischen Mensch und Tier wachsen darf.",
+};
+
+export default function VertrauenPage() {
+    return (
+        <>
+            <VertrauenHero />
+            <VertrauenWachsen />
+            <VertrauenManuela />
+            <VertrauenBegleiter />
+        </>
+    );
 }
