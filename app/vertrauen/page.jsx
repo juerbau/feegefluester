@@ -3,6 +3,7 @@ import VertrauenHero from "@/ui/components/vertrauen/VertrauenHero";
 import VertrauenWachsen from "@/ui/components/vertrauen/VertrauenWachsen";
 import VertrauenManuela from "@/ui/components/vertrauen/VertrauenManuela";
 import VertrauenBegleiter from "@/ui/components/vertrauen/VertrauenBegleiter";
+import VertrauenWege from "@/ui/components/vertrauen/VertrauenWege";
 
 export const metadata = {
     title: "Vertrauen | Feegeflüster",
@@ -17,6 +18,7 @@ export default function VertrauenPage() {
             <VertrauenWachsen />
             <VertrauenManuela />
             <VertrauenBegleiter />
+            <VertrauenWege />
         </>
     );
 }

@@ -46,7 +46,7 @@ export default async function HomePage() {
 
             <HomeContact />
 
-            <SectionSpacer />
+            {/*<SectionSpacer />*/}
             {/*<HomeQuote />*/}
 
             {/*<PageIntro*/}
