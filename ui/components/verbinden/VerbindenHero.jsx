@@ -6,7 +6,6 @@ import { verbindenContent } from "@/lib/content/verbindenContent";
 import verbindenHero from "@/ui/images/verbinden/verbinden-hero.png";
 
 export default function VerbindenHero() {
-
     const { hero } = verbindenContent;
 
     return (
@@ -26,7 +25,7 @@ export default function VerbindenHero() {
                         "relative h-[300px] w-full",
                         "sm:h-[400px]",
                         "lg:absolute lg:inset-y-0 lg:left-0",
-                        "lg:h-full lg:w-[72%]"
+                        "lg:h-full lg:w-[62%] xl:w-[72%]"
                     )}
                 >
                     <Image
@@ -34,7 +33,7 @@ export default function VerbindenHero() {
                         alt="Eine Katze legt ihre Pfote vertrauensvoll in die Hand eines Menschen."
                         fill
                         priority
-                        sizes="(min-width: 1024px) 72vw, 100vw"
+                        sizes="(min-width: 1280px) 72vw, (min-width: 1024px) 62vw, 100vw"
                         className={cn(
                             "object-cover",
                             "object-[35%_center]",
@@ -69,8 +68,9 @@ export default function VerbindenHero() {
                     <div
                         className={cn(
                             "mx-auto w-full max-w-xl",
-                            "lg:mx-0 lg:w-[43%] lg:max-w-none",
-                            "lg:pl-6 xl:pl-10"
+                            "lg:mx-0 lg:w-[42%] lg:max-w-none",
+                            "xl:w-[40%]",
+                            "lg:pl-0 xl:pl-12"
                         )}
                     >
                         <h1
@@ -82,7 +82,6 @@ export default function VerbindenHero() {
                             )}
                         >
                             {hero.title}
-
                         </h1>
 
                         <p
@@ -90,17 +89,16 @@ export default function VerbindenHero() {
                                 "mt-5 font-handwrite text-[#c8a56e]",
                                 "text-[clamp(2.3rem,3.5vw,3.8rem)]",
                                 "leading-[1.15]",
-                                "whitespace-pre-line",
+                                "whitespace-pre-line"
                             )}
                         >
                             {hero.subtitle}
-
                         </p>
 
                         <p
                             className={cn(
                                 "mt-8 font-body text-[#827d87]",
-                                "text-[clamp(1.000rem,0.94rem+0.25vw,1.125rem)]",
+                                "text-[clamp(1rem,0.94rem+0.25vw,1.125rem)]",
                                 "leading-[1.9]"
                             )}
                         >
