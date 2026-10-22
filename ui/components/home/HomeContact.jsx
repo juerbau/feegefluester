@@ -66,11 +66,7 @@ export default function HomeContact() {
                         text-balance
                     "
                 >
-                    Manchmal beginnt eine besondere Verbindung mit
-                    einer einfachen Frage. Wenn du mehr über die
-                    Tierkommunikation erfahren möchtest oder ein
-                    Anliegen hast, freue ich mich darauf, von dir
-                    und deinem tierischen Begleiter zu hören.
+                    Vielleicht gibt es etwas, das dich im Zusammenleben mit deinem Tier schon länger beschäftigt. Oder du wünschst dir einen neuen Blick auf eure gemeinsame Verbindung. Ich bin gerne für euch da.
                 </p>
 
                 {/* Kontakt-Button */}
