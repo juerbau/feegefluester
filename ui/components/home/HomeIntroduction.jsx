@@ -104,7 +104,7 @@ export default function HomeIntroduction() {
                         href="/verstehen"
                         className="mt-8"
                     >
-                        Tierkommunikation entdecken
+                        Mehr erfahren
                     </MainButton>
                 </div>
             </div>

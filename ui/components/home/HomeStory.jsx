@@ -128,10 +128,10 @@ export default function HomeStory() {
                     </blockquote>
 
                     <MainButton
-                        href="/verbinden#katzen-geschichte"
+                        href="/verbinden"
                         className="mt-9"
                     >
-                        Die ganze Geschichte lesen
+                        Mehr erfahren
                     </MainButton>
                 </div>
             </div>

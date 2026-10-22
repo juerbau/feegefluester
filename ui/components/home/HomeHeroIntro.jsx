@@ -129,27 +129,6 @@ export default function HomeHeroIntro({
                 {content.subtitle}
             </p>
 
-
-            {/* ----------------------------------------
-                Call-to-Action
-            ---------------------------------------- */}
-
-            <MainButton
-                href={content.cta.href}
-                className={cn(
-                    mobile
-                        ? [
-                            "mt-8",
-                        ]
-                        : [
-                            // Abstand skaliert mit
-                            "mt-[clamp(1rem,2vw,2.5rem)]",
-                        ]
-                )}
-            >
-                {content.cta.label}
-            </MainButton>
-
         </div>
     );
 }
