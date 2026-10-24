@@ -1,11 +1,9 @@
 import Image from "next/image";
-
 import {cn} from "@/lib/utils/cn";
 import {verstehenContent} from "@/lib/content/verstehenContent";
-
 import MainButton from "@/ui/components/common/MainButton";
-
 import tierkommunikationHund from "@/ui/images/verstehen/tierkommunikation-hund.png";
+
 
 export default function TierkommunikationContent() {
     const chapter = verstehenContent.chapters.find(

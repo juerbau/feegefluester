@@ -1,15 +1,17 @@
-import {Fragment} from "react";
-
 import {verstehenContent} from "@/lib/content/verstehenContent";
-
-import PageIntro from "@/ui/components/common/PageIntro";
-import VerstehenChapter from "@/ui/components/verstehen/VerstehenChapter";
-import VerstehenClosing from "@/ui/components/verstehen/VerstehenClosing";
-import SparkleDivider from "@/ui/components/utils/SparkleDivider";
 import VerstehenHero from "@/ui/components/verstehen/VerstehenHero";
 import VerstehenIntroduction from "@/ui/components/verstehen/VerstehenIntroduction";
 import VerstehenTopics from "@/ui/components/verstehen/VerstehenTopics";
 import VerstehenPerspectives from "@/ui/components/verstehen/VerstehenPerspectives";
+import {buildMetadata} from "@/lib/seo";
+
+export const metadata = buildMetadata({
+    title: "Mensch und Tier besser verstehen",
+    description:
+        "Entdecke neue Perspektiven auf die Verbindung zwischen Mensch und Tier. " +
+        "Erfahre mehr über Tierkommunikation und Spiegelthemen bei Feegeflüster.",
+    path: "/verstehen",
+});
 
 export default function VerstehenPage() {
     const content = verstehenContent;
@@ -17,41 +19,14 @@ export default function VerstehenPage() {
     return (
         <main className="min-h-screen">
 
-            <VerstehenHero />
+            <VerstehenHero/>
 
-            <VerstehenIntroduction />
+            <VerstehenIntroduction/>
 
-            <VerstehenTopics />
+            <VerstehenTopics/>
 
-            <VerstehenPerspectives />
+            <VerstehenPerspectives/>
 
-            {/*<PageIntro*/}
-            {/*    content={content.intro}*/}
-            {/*/>*/}
-
-            {/*{content.chapters.map((chapter, index) => (*/}
-            {/*    <Fragment key={chapter.id}>*/}
-            {/*        {index > 0 && (*/}
-            {/*            <SparkleDivider*/}
-            {/*                size={16}*/}
-            {/*                className="my-12"*/}
-            {/*            />*/}
-            {/*        )}*/}
-
-            {/*        <VerstehenChapter*/}
-            {/*            content={chapter}*/}
-            {/*        />*/}
-            {/*    </Fragment>*/}
-            {/*))}*/}
-
-            {/*<SparkleDivider*/}
-            {/*    size={16}*/}
-            {/*    className="my-12"*/}
-            {/*/>*/}
-
-            {/*<VerstehenClosing*/}
-            {/*    content={content.closing}*/}
-            {/*/>*/}
         </main>
     );
 }

@@ -1,10 +1,24 @@
 import {cormorant, quicksand, dancingScript} from "@/lib/fonts";
 import "@/app/globals.css";
-
 import {cn} from "@/lib/utils/cn";
-
 import Header from "@/ui/components/header/Header";
 import Footer from "@/ui/components/footer/Footer";
+import ScrollTopButton from "@/ui/components/common/ScrollTopButton";
+import { siteUrl } from "@/lib/site";
+
+
+export const metadata = {
+    metadataBase: new URL(siteUrl),
+
+    title: {
+        default: "Feegeflüster – Tierkommunikation & Begleitung",
+        template: "%s | Feegeflüster",
+    },
+
+    description:
+        "Feegeflüster – Tierkommunikation und einfühlsame Begleitung für Mensch und Tier.",
+};
+
 
 export default function RootLayout({children}) {
     return (
@@ -34,6 +48,8 @@ export default function RootLayout({children}) {
                 </main>
 
                 <Footer />
+
+                <ScrollTopButton />
             </div>
         </div>
         </body>

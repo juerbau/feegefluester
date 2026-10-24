@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 import { cn } from "@/lib/utils/cn";
 import MainButton from "@/ui/components/common/MainButton";
 import { spiegelthemenContent } from "@/lib/content/spiegelthemenContent";

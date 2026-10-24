@@ -45,6 +45,7 @@ export default function KontaktForm({ className }) {
             email: "",
             phone: "",
             message: "",
+            website: "",
         },
     });
 
@@ -61,7 +62,12 @@ export default function KontaktForm({ className }) {
             });
 
             if (!response.ok) {
-                throw new Error("Nachricht konnte nicht gesendet werden.");
+                const errorData = await response.json().catch(() => null);
+
+                throw new Error(
+                    errorData?.message ||
+                    `Nachricht konnte nicht gesendet werden (HTTP ${response.status}).`
+                );
             }
 
             setSubmitStatus("success");
@@ -115,6 +121,23 @@ export default function KontaktForm({ className }) {
                     className="mt-14 space-y-8"
                     noValidate
                 >
+                    {/* Honeypot – für echte Besucher unsichtbar */}
+                    <div
+                        className="absolute left-[-9999px] h-px w-px overflow-hidden"
+                        aria-hidden="true"
+                    >
+                        <label htmlFor="contact-website">
+                            Website
+                        </label>
+
+                        <input
+                            id="contact-website"
+                            type="text"
+                            tabIndex={-1}
+                            autoComplete="off"
+                            {...register("website")}
+                        />
+                    </div>
                     {/* Name */}
                     <div>
                         <label
