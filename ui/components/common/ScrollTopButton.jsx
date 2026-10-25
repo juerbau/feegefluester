@@ -57,7 +57,7 @@ export default function ScrollTopButton() {
                 aria-hidden={!visible}
                 tabIndex={visible ? 0 : -1}
                 className={cn(
-                    "flex h-5 w-17.5 items-center justify-center",
+                    "flex h-6 w-18 items-center justify-center",
                     "rounded-t-xl bg-[#c8a56e] text-white",
                     "shadow-md",
                     "transition-colors duration-300",

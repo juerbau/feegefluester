@@ -3,7 +3,7 @@ import {Resend} from "resend";
 import {contactSchema} from "@/lib/validation/contactSchema";
 import ContactMail from "@/emails/ContactMail";
 import {checkOrigin} from "@/lib/security/origin-check";
-import {request} from "node:http";
+import {checkRateLimit} from "@/lib/security/rate-limit";
 
 // Maximale Größe einer Kontaktanfrage: 16 KB
 const MAX_BODY_SIZE = 16 * 1024;
@@ -63,10 +63,7 @@ async function readJsonBody(request) {
 
 export async function POST(request) {
 
-    // --------------------------------------------------
-    // 1. Origin prüfen
-    // --------------------------------------------------
-
+    // Origin prüfen
     if (!checkOrigin(request)) {
         return errorResponse(
             "Diese Anfrage ist nicht erlaubt.",
@@ -74,10 +71,26 @@ export async function POST(request) {
         );
     }
 
-    // --------------------------------------------------
-    // 2. Content-Type prüfen
-    // --------------------------------------------------
+    // Rate Limiting
+    try {
+        const allowed = await checkRateLimit(request);
 
+        if (!allowed) {
+            return errorResponse(
+                "Du hast zu viele Anfragen gesendet. Bitte versuche es in einer Minute erneut.",
+                429
+            );
+        }
+    } catch (error) {
+        console.error("Rate-Limit-Prüfung fehlgeschlagen:", error);
+
+        return errorResponse(
+            "Der Nachrichtenversand ist momentan nicht verfügbar. Bitte versuche es später erneut.",
+            503
+        );
+    }
+
+    // Content-Type prüfen
     const contentType = request.headers.get("content-type");
 
     if (
@@ -90,10 +103,7 @@ export async function POST(request) {
         );
     }
 
-    // --------------------------------------------------
-    // 3. Request-Größe vorab prüfen
-    // --------------------------------------------------
-
+    // Request-Größe vorab prüfen
     const contentLength = request.headers.get(
         "content-length"
     );
@@ -113,10 +123,7 @@ export async function POST(request) {
         }
     }
 
-    // --------------------------------------------------
-    // 4. Request-Body sicher einlesen
-    // --------------------------------------------------
-
+    // Request-Body sicher einlesen
     let body;
 
     try {
@@ -140,10 +147,7 @@ export async function POST(request) {
         );
     }
 
-    // --------------------------------------------------
-    // 5. Honeypot frühzeitig prüfen
-    // --------------------------------------------------
-
+    // Honeypot frühzeitig prüfen
     // Nur ein nicht-leerer String gilt als ausgelöster
     // Honeypot. Andere Werte prüft anschließend Zod.
     if (
@@ -164,10 +168,7 @@ export async function POST(request) {
         );
     }
 
-    // --------------------------------------------------
-    // 6. Eingaben serverseitig validieren
-    // --------------------------------------------------
-
+    // Eingaben serverseitig validieren
     const result = contactSchema.safeParse(body);
 
     if (!result.success) {
@@ -177,10 +178,7 @@ export async function POST(request) {
         );
     }
 
-    // --------------------------------------------------
-    // 7. Validierte Daten extrahieren
-    // --------------------------------------------------
-
+    // Validierte Daten extrahieren
     const {
         name,
         email,
@@ -188,10 +186,7 @@ export async function POST(request) {
         message,
     } = result.data;
 
-    // --------------------------------------------------
-    // 8. Umgebungsvariablen prüfen
-    // --------------------------------------------------
-
+    // Umgebungsvariablen prüfen
     const apiKey = process.env.RESEND_API_KEY;
     const fromEmail = process.env.RESEND_FROM_EMAIL;
     const toEmail = process.env.CONTACT_TO_EMAIL;
@@ -209,16 +204,10 @@ export async function POST(request) {
         );
     }
 
-    // --------------------------------------------------
-    // 9. Resend initialisieren
-    // --------------------------------------------------
-
+    // Resend initialisieren
     const resend = new Resend(apiKey);
 
-    // --------------------------------------------------
-    // 10. E-Mail versenden
-    // --------------------------------------------------
-
+    // E-Mail versenden
     try {
         const emailTemplate = createElement(
             ContactMail,
@@ -252,19 +241,13 @@ export async function POST(request) {
             );
         }
 
-        // --------------------------------------------------
-        // 11. Erfolgreichen Versand protokollieren
-        // --------------------------------------------------
-
+        // Erfolgreichen Versand protokollieren
         console.info(
             "Kontaktanfrage erfolgreich versendet.",
             {emailId: data?.id}
         );
 
-        // --------------------------------------------------
-        // 12. Erfolgsantwort zurückgeben
-        // --------------------------------------------------
-
+        // Erfolgsantwort zurückgeben
         return Response.json(
             {
                 success: true,
@@ -275,10 +258,8 @@ export async function POST(request) {
             {status: 200}
         );
     } catch (error) {
-        // --------------------------------------------------
-        // 13. Unerwartete Fehler behandeln
-        // --------------------------------------------------
 
+        // Unerwartete Fehler behandeln
         console.error(
             "Unerwarteter Fehler beim E-Mail-Versand:",
             error
