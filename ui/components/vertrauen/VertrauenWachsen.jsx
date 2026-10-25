@@ -1,6 +1,4 @@
-
 import { PawPrint } from "lucide-react";
-
 import { cn } from "@/lib/utils/cn";
 import { vertrauenContent } from "@/lib/content/vertrauenContent";
 

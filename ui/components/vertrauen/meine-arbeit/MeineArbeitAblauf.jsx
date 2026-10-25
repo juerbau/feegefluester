@@ -1,8 +1,6 @@
-
-import { Ear, Heart, Sprout } from "lucide-react";
-
-import { cn } from "@/lib/utils/cn";
-import { meineArbeitContent } from "@/lib/content/meineArbeitContent";
+import {Ear, Heart, Sprout, PawPrint} from "lucide-react";
+import {cn} from "@/lib/utils/cn";
+import {meineArbeitContent} from "@/lib/content/meineArbeitContent";
 
 const icons = {
     ear: Ear,
@@ -11,7 +9,7 @@ const icons = {
 };
 
 export default function MeineArbeitAblauf() {
-    const { ablauf } = meineArbeitContent;
+    const {ablauf} = meineArbeitContent;
 
     return (
         <section
@@ -146,6 +144,89 @@ export default function MeineArbeitAblauf() {
                                 </div>
                             );
                         })}
+                    </div>
+                </div>
+                {/* Energieausgleich */}
+                <div
+                    className={cn(
+                        "mx-auto mt-16 max-w-3xl",
+                        "border-t border-[#c8a56e]/35 pt-12",
+                        "text-center lg:mt-20 lg:pt-16"
+                    )}
+                >
+                    <h3
+                        className={cn(
+                            "font-handwrite text-[#c8a56e]",
+                            "text-[clamp(2rem,2.8vw,2.8rem)]"
+                        )}
+                    >
+                        {ablauf.energieausgleich.title}
+                    </h3>
+
+                    <p
+                        className={cn(
+                            "mx-auto mt-5 max-w-2xl",
+                            "font-body text-[#827d87]",
+                            "text-[clamp(1rem,0.94rem+0.25vw,1.125rem)]",
+                            "leading-[1.9]"
+                        )}
+                    >
+                        {ablauf.energieausgleich.description}
+                    </p>
+
+                    <div className="mt-8">
+        <span
+            className={cn(
+                "font-body font-light text-[#827d87]",
+                "text-[clamp(2rem,3vw,2.8rem)]"
+            )}
+        >
+            {ablauf.energieausgleich.price}
+        </span>
+
+                        <span className="ml-2 font-body text-[#827d87]">
+            {ablauf.energieausgleich.unit}
+        </span>
+                    </div>
+
+                    <div className="mx-auto mt-8 max-w-lg">
+                        <p className="font-body font-medium text-[#827d87]">
+                            {ablauf.energieausgleich.includedTitle}
+                        </p>
+
+                        <ul className="mx-auto mt-5 w-fit max-w-full space-y-4 text-left">
+                            {ablauf.energieausgleich.included.map((item) => (
+                                <li
+                                    key={item}
+                                    className="flex items-center gap-4"
+                                >
+                                    <span
+                                        className={cn(
+                                            "flex h-9 w-9 shrink-0",
+                                            "items-center justify-center",
+                                            "rounded-full bg-white/80"
+                                        )}
+                                        aria-hidden="true"
+                                    >
+    <PawPrint
+        size={19}
+        strokeWidth={1.5}
+        className="text-[#afbdaf]"
+    />
+</span>
+
+                                    <span
+                                        className={cn(
+                                            "font-body text-[#827d87]",
+                                            "text-[clamp(1rem,0.94rem+0.25vw,1.125rem)]",
+                                            "leading-[1.8]"
+                                        )}
+                                    >
+                {item}
+            </span>
+                                </li>
+                            ))}
+                        </ul>
                     </div>
                 </div>
             </div>
