@@ -1,11 +1,7 @@
-
 import { cn } from "@/lib/utils/cn";
-import { vertrauenContent } from "@/lib/content/vertrauenContent";
-
 import ManuelaPortrait from "./ManuelaPortrait";
 
-export default function VertrauenManuela() {
-    const { manuela } = vertrauenContent;
+export default function VertrauenManuela({ manuela }) {
 
     return (
         <section

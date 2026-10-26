@@ -1,6 +1,5 @@
 import {Ear, Heart, Sprout, PawPrint} from "lucide-react";
 import {cn} from "@/lib/utils/cn";
-import {meineArbeitContent} from "@/lib/content/meineArbeitContent";
 
 const icons = {
     ear: Ear,
@@ -8,8 +7,7 @@ const icons = {
     sprout: Sprout,
 };
 
-export default function MeineArbeitAblauf() {
-    const {ablauf} = meineArbeitContent;
+export default function MeineArbeitAblauf({ablauf}) {
 
     return (
         <section

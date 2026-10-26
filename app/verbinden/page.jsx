@@ -2,6 +2,7 @@ import VerbindenHero from "@/ui/components/verbinden/VerbindenHero";
 import VerbindenMiteinander from "@/ui/components/verbinden/VerbindenMiteinander";
 import VerbindenGeschichte from "@/ui/components/verbinden/VerbindenGeschichte";
 import {buildMetadata} from "@/lib/seo";
+import { verbindenContent } from "@/lib/content/verbinden/verbindenContent";
 
 
 export const metadata = buildMetadata({
@@ -14,17 +15,13 @@ export const metadata = buildMetadata({
 
 
 export default function VerbindenPage() {
+    const { hero, miteinander, katzenGeschichte } = verbindenContent;
 
     return (
         <main className="min-h-screen">
-
-            <VerbindenHero/>
-
-            <VerbindenMiteinander/>
-
-            <VerbindenGeschichte/>
-
-
+            <VerbindenHero hero={hero}/>
+            <VerbindenMiteinander miteinander={miteinander}/>
+            <VerbindenGeschichte katzenGeschichte={katzenGeschichte}/>
         </main>
     );
 }

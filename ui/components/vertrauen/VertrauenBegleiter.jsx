@@ -1,9 +1,5 @@
-
 import Image from "next/image";
-
 import { cn } from "@/lib/utils/cn";
-import { vertrauenContent } from "@/lib/content/vertrauenContent";
-
 import feeImage from "@/ui/images/vertrauen/fee.jpeg";
 import lewiImage from "@/ui/images/vertrauen/lewi.jpeg";
 import lunaImage from "@/ui/images/vertrauen/luna.jpeg";
@@ -14,8 +10,7 @@ const animalImages = {
     Luna: lunaImage,
 };
 
-export default function VertrauenBegleiter() {
-    const { tierischeBegleiter } = vertrauenContent;
+export default function VertrauenBegleiter({ tierischeBegleiter }) {
 
     return (
         <section
@@ -76,7 +71,7 @@ export default function VertrauenBegleiter() {
                         >
                             <div
                                 className={cn(
-                                    "relative aspect-[4/5] w-full overflow-hidden",
+                                    "relative aspect-4/5 w-full overflow-hidden",
                                     "rounded-tr-[80px] rounded-bl-[80px]",
                                     "bg-[#afbdaf]/20"
                                 )}

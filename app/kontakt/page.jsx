@@ -1,7 +1,7 @@
-import {kontaktContent} from "@/lib/content/kontaktContent";
 import KontaktForm from "@/ui/components/kontakt/KontaktForm";
 import KontaktHero from "@/ui/components/kontakt/KontaktHero";
 import {buildMetadata} from "@/lib/seo";
+import { kontaktContent } from "@/lib/content/kontakt/kontaktContent";
 
 
 export const metadata = buildMetadata({
@@ -14,15 +14,12 @@ export const metadata = buildMetadata({
 
 
 export default function KontaktPage() {
-    const content = kontaktContent;
+    const { hero, form } = kontaktContent;
 
     return (
         <main className="min-h-screen">
-
-            <KontaktHero/>
-
-            <KontaktForm/>
-
+            <KontaktHero hero={hero} />
+            <KontaktForm form={form} />
         </main>
     );
 }

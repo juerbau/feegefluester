@@ -1,6 +1,7 @@
 import MeinWegIntro from "@/ui/components/vertrauen/mein-weg/MeinWegIntro";
 import MeinWegGeschichte from "@/ui/components/vertrauen/mein-weg/MeinWegGeschichte";
 import { buildMetadata } from "@/lib/seo";
+import { meinWegContent } from "@/lib/content/vertrauen/meinWeg/meinWegContent";
 
 
 export const metadata = buildMetadata({
@@ -13,11 +14,13 @@ export const metadata = buildMetadata({
 
 
 export default function MeinWegPage() {
+    const { intro, geschichte } = meinWegContent;
+
     return (
         <>
-            <MeinWegIntro />
+            <MeinWegIntro intro={intro} />
 
-            <MeinWegGeschichte />
+            <MeinWegGeschichte geschichte={geschichte} />
         </>
     );
 }

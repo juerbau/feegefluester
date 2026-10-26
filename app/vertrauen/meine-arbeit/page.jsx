@@ -3,6 +3,7 @@ import MeineArbeitWeiterbildungen from "@/ui/components/vertrauen/meine-arbeit/M
 import MeineArbeitAblauf from "@/ui/components/vertrauen/meine-arbeit/MeineArbeitAblauf";
 import MeineArbeitGrenzen from "@/ui/components/vertrauen/meine-arbeit/MeineArbeitGrenzen";
 import {buildMetadata} from "@/lib/seo";
+import { meineArbeitContent } from "@/lib/content/vertrauen/meineArbeit/meineArbeitContent";
 
 
 export const metadata = buildMetadata({
@@ -15,15 +16,14 @@ export const metadata = buildMetadata({
 
 
 export default function MeineArbeitPage() {
+    const { intro, weiterbildungen, ablauf, grenzen } = meineArbeitContent;
+
     return (
         <>
-            <MeineArbeitIntro/>
-
-            <MeineArbeitWeiterbildungen/>
-
-            <MeineArbeitAblauf/>
-
-            <MeineArbeitGrenzen/>
+            <MeineArbeitIntro intro={intro} />
+            <MeineArbeitWeiterbildungen weiterbildungen={weiterbildungen} />
+            <MeineArbeitAblauf ablauf={ablauf} />
+            <MeineArbeitGrenzen grenzen={grenzen} />
         </>
     );
 }

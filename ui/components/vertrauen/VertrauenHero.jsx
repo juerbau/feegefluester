@@ -1,24 +1,21 @@
-
 import Image from "next/image";
-
 import { cn } from "@/lib/utils/cn";
-import { vertrauenContent } from "@/lib/content/vertrauenContent";
 import vertrauenHero from "@/ui/images/vertrauen/vertrauen-hero.png";
 
-export default function VertrauenHero() {
-    const { hero } = vertrauenContent;
+
+export default function VertrauenHero({ hero }) {
 
     return (
         <section
             className="w-full overflow-hidden bg-champagner-light"
             aria-labelledby="vertrauen-title"
         >
-            <div className="relative w-full lg:min-h-[650px]">
+            <div className="relative w-full lg:min-h-162.5">
                 {/* Bildbereich */}
                 <div
                     className={cn(
-                        "relative h-[300px] w-full",
-                        "sm:h-[400px]",
+                        "relative h-75 w-full",
+                        "sm:h-100",
                         "lg:absolute lg:inset-0 lg:h-full"
                     )}
                 >
@@ -40,10 +37,10 @@ export default function VertrauenHero() {
                         className={cn(
                             "pointer-events-none absolute inset-0",
                             "hidden lg:block",
-                            "bg-gradient-to-r",
-                            "from-transparent from-[30%]",
-                            "via-[#f8f4ed]/85 via-[58%]",
-                            "to-champagner-light to-[78%]"
+                            "bg-linear-to-r",
+                            "from-transparent from-30%",
+                            "via-[#f8f4ed]/85 via-58%",
+                            "to-champagner-light to-78%"
                         )}
                         aria-hidden="true"
                     />

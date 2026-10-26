@@ -1,11 +1,8 @@
-
 import { cn } from "@/lib/utils/cn";
-import { verbindenContent } from "@/lib/content/verbindenContent";
-
 import MainButton from "@/ui/components/common/MainButton";
 
-export default function VerbindenGeschichte() {
-    const { katzenGeschichte } = verbindenContent;
+
+export default function VerbindenGeschichte({ katzenGeschichte }) {
 
     return (
         <section

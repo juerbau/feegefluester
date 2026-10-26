@@ -1,9 +1,6 @@
-
 import { cn } from "@/lib/utils/cn";
-import { meineArbeitContent } from "@/lib/content/meineArbeitContent";
 
-export default function MeineArbeitIntro() {
-    const { intro } = meineArbeitContent;
+export default function MeineArbeitIntro({ intro }) {
 
     return (
         <section

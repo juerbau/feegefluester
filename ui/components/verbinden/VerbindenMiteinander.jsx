@@ -1,13 +1,8 @@
-
 import Image from "next/image";
-
 import { cn } from "@/lib/utils/cn";
-import { verbindenContent } from "@/lib/content/verbindenContent";
-
 import verbindenMiteinander from "@/ui/images/verbinden/verbinden-miteinander.png";
 
-export default function VerbindenMiteinander() {
-    const { miteinander } = verbindenContent;
+export default function VerbindenMiteinander({ miteinander }) {
 
     return (
         <section
@@ -27,7 +22,7 @@ export default function VerbindenMiteinander() {
                 <div className="mx-auto w-full max-w-xl lg:mx-0">
                     <div
                         className={cn(
-                            "relative aspect-[4/5] w-full overflow-hidden",
+                            "relative aspect-4/5 w-full overflow-hidden",
                             "rounded-tr-[90px] rounded-bl-[90px]"
                         )}
                     >

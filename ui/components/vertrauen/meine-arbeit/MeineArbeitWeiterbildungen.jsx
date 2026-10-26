@@ -1,13 +1,10 @@
-
 import {
     MessagesSquare,
     Sparkles,
     Heart,
     HandHeart,
 } from "lucide-react";
-
 import { cn } from "@/lib/utils/cn";
-import { meineArbeitContent } from "@/lib/content/meineArbeitContent";
 
 const icons = {
     messages: MessagesSquare,
@@ -16,8 +13,7 @@ const icons = {
     "hand-heart": HandHeart,
 };
 
-export default function MeineArbeitWeiterbildungen() {
-    const { weiterbildungen } = meineArbeitContent;
+export default function MeineArbeitWeiterbildungen({ weiterbildungen }) {
 
     return (
         <section

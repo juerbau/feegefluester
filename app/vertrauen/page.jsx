@@ -4,6 +4,7 @@ import VertrauenManuela from "@/ui/components/vertrauen/VertrauenManuela";
 import VertrauenBegleiter from "@/ui/components/vertrauen/VertrauenBegleiter";
 import VertrauenWege from "@/ui/components/vertrauen/VertrauenWege";
 import {buildMetadata} from "@/lib/seo";
+import {vertrauenContent} from "@/lib/content/vertrauen/vertrauenContent";
 
 
 export const metadata = buildMetadata({
@@ -16,17 +17,19 @@ export const metadata = buildMetadata({
 
 
 export default function VertrauenPage() {
+    const {hero, vertrauenWachsen, manuela, tierischeBegleiter, weitereWege} = vertrauenContent;
+
     return (
         <>
-            <VertrauenHero/>
+            <VertrauenHero hero={hero} />
 
-            <VertrauenWachsen/>
+            <VertrauenWachsen vertrauenWachsen={vertrauenWachsen} />
 
-            <VertrauenManuela/>
+            <VertrauenManuela manuela={manuela} />
 
-            <VertrauenBegleiter/>
+            <VertrauenBegleiter tierischeBegleiter={tierischeBegleiter} />
 
-            <VertrauenWege/>
+            <VertrauenWege weitereWege={weitereWege} />
         </>
     );
 }

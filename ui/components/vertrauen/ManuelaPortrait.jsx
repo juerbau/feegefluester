@@ -1,6 +1,4 @@
-
 import { UserRound } from "lucide-react";
-
 import { cn } from "@/lib/utils/cn";
 
 export default function ManuelaPortrait() {

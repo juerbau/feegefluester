@@ -9,7 +9,7 @@ import { contactSchema } from "@/lib/validation/contactSchema";
 import MainButton from "@/ui/components/common/MainButton";
 
 
-export default function KontaktForm({ className }) {
+export default function KontaktForm({ className, form }) {
     const [submitStatus, setSubmitStatus] = useState(null);
 
     const inputClasses = cn(
@@ -85,10 +85,8 @@ export default function KontaktForm({ className }) {
             )}
             aria-labelledby="kontaktformular-title"
         >
-            <div className={cn(
-                "mx-auto w-full max-w-160",
-            )}
-            >
+            <div className="mx-auto w-full max-w-160">
+
                 {/* Einleitung */}
                 <div className="mx-auto max-w-2xl text-center">
                     <h2
@@ -100,7 +98,7 @@ export default function KontaktForm({ className }) {
                             "leading-[1.3]"
                         )}
                     >
-                        Ich freue mich auf deine Nachricht.
+                        {form.title}
                     </h2>
 
                     <p
@@ -111,7 +109,7 @@ export default function KontaktForm({ className }) {
                             "leading-[1.9]"
                         )}
                     >
-                        Erzähl mir einfach, was dich und dein Tier gerade beschäftigt. Ich melde mich so bald wie möglich bei dir.
+                        {form.description}
                     </p>
                 </div>
 
@@ -138,13 +136,14 @@ export default function KontaktForm({ className }) {
                             {...register("website")}
                         />
                     </div>
+
                     {/* Name */}
                     <div>
                         <label
                             htmlFor="name"
                             className="mb-2 block font-body text-base text-[#827d87]"
                         >
-                            Name
+                            {form.fields.name}
                         </label>
 
                         <input
@@ -175,7 +174,7 @@ export default function KontaktForm({ className }) {
                             htmlFor="email"
                             className="mb-2 block font-body text-base text-[#827d87]"
                         >
-                            E-Mail
+                            {form.fields.email}
                         </label>
 
                         <input
@@ -206,9 +205,10 @@ export default function KontaktForm({ className }) {
                             htmlFor="phone"
                             className="mb-2 block font-body text-base text-[#827d87]"
                         >
-                            Telefon
+                            {form.fields.phone}
+
                             <span className="ml-2 text-sm text-[#b7b2bc]">
-                                (optional)
+                                {form.fields.optional}
                             </span>
                         </label>
 
@@ -240,7 +240,7 @@ export default function KontaktForm({ className }) {
                             htmlFor="message"
                             className="mb-2 block font-body text-base text-[#827d87]"
                         >
-                            Nachricht
+                            {form.fields.message}
                         </label>
 
                         <textarea
@@ -274,11 +274,9 @@ export default function KontaktForm({ className }) {
                             "leading-[1.8]"
                         )}
                     >
-                        Deine Angaben verwenden wir zur Bearbeitung
-                        deiner Anfrage. Weitere Informationen findest
-                        du in unserer{" "}
+                        {form.privacy.before}{" "}
                         <Link
-                            href="/datenschutz"
+                            href={form.privacy.href}
                             className={cn(
                                 "text-[#b99760] underline",
                                 "underline-offset-4",
@@ -286,7 +284,7 @@ export default function KontaktForm({ className }) {
                                 "hover:text-[#827d87]"
                             )}
                         >
-                            Datenschutzerklärung
+                            {form.privacy.linkLabel}
                         </Link>
                         .
                     </p>
@@ -301,9 +299,7 @@ export default function KontaktForm({ className }) {
                                 "font-body text-[#657765]"
                             )}
                         >
-                            Vielen Dank für deine Nachricht!
-                            Sie wurde erfolgreich versendet.
-                            Ich melde mich so bald wie möglich bei dir.
+                            {form.status.success}
                         </p>
                     )}
 
@@ -316,9 +312,7 @@ export default function KontaktForm({ className }) {
                                 "font-body text-[#827d87]"
                             )}
                         >
-                            Deine Nachricht konnte leider nicht
-                            gesendet werden. Bitte versuche es
-                            später noch einmal.
+                            {form.status.error}
                         </p>
                     )}
 
@@ -329,8 +323,8 @@ export default function KontaktForm({ className }) {
                             disabled={isSubmitting}
                         >
                             {isSubmitting
-                                ? "Nachricht wird gesendet..."
-                                : "Nachricht senden"}
+                                ? form.submit.loading
+                                : form.submit.idle}
                         </MainButton>
                     </div>
                 </form>

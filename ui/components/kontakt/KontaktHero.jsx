@@ -1,12 +1,8 @@
-
 import Image from "next/image";
-
 import { cn } from "@/lib/utils/cn";
-import { kontaktContent } from "@/lib/content/kontaktContent";
 import kontaktHero from "@/ui/images/kontakt/kontakt-hero.png";
 
-export default function KontaktHero() {
-    const { hero } = kontaktContent;
+export default function KontaktHero({ hero }) {
 
     return (
         <section
@@ -16,7 +12,7 @@ export default function KontaktHero() {
             <div
                 className={cn(
                     "relative isolate w-full",
-                    "lg:min-h-[680px]"
+                    "lg:min-h-170"
                 )}
             >
                 {/* Bild: Desktop als Hintergrund */}
@@ -35,7 +31,7 @@ export default function KontaktHero() {
                 {/* Desktop-Verlauf */}
                 <div
                     className={cn(
-                        "pointer-events-none absolute inset-0 z-[1]",
+                        "pointer-events-none absolute inset-0 z-1",
                         "hidden lg:block",
                         "bg-[linear-gradient(90deg,rgba(247,242,233,0.99)_0%,rgba(247,242,233,0.98)_30%,rgba(247,242,233,0.90)_43%,rgba(247,242,233,0.45)_58%,rgba(247,242,233,0.08)_72%,transparent_82%)]"
                     )}
@@ -46,7 +42,7 @@ export default function KontaktHero() {
                 <div
                     className={cn(
                         "relative w-full overflow-hidden",
-                        "aspect-[16/10] sm:aspect-[16/8]",
+                        "aspect-16/10 sm:aspect-16/8",
                         "lg:hidden"
                     )}
                 >
@@ -66,13 +62,13 @@ export default function KontaktHero() {
                         "relative z-10",
                         "mx-auto flex w-full max-w-7xl items-center",
                         "px-6 py-14 md:px-10 md:py-16",
-                        "lg:min-h-[680px] lg:py-20"
+                        "lg:min-h-170 lg:py-20"
                     )}
                 >
                     <div
                         className={cn(
                             "mx-auto w-full max-w-xl",
-                            "lg:mx-0 lg:w-[43%] lg:max-w-[520px]"
+                            "lg:mx-0 lg:w-[43%] lg:max-w-130"
                         )}
                     >
                         <h1

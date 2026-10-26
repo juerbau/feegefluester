@@ -1,8 +1,5 @@
-
 import { Heart, HandHeart } from "lucide-react";
-
 import { cn } from "@/lib/utils/cn";
-import { vertrauenContent } from "@/lib/content/vertrauenContent";
 import MainButton from "@/ui/components/common/MainButton";
 
 const icons = {
@@ -10,8 +7,7 @@ const icons = {
     "hand-heart": HandHeart,
 };
 
-export default function VertrauenWege() {
-    const { weitereWege } = vertrauenContent;
+export default function VertrauenWege({ weitereWege }) {
 
     return (
         <section

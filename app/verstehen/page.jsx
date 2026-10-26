@@ -3,7 +3,7 @@ import VerstehenIntroduction from "@/ui/components/verstehen/VerstehenIntroducti
 import VerstehenTopics from "@/ui/components/verstehen/VerstehenTopics";
 import VerstehenPerspectives from "@/ui/components/verstehen/VerstehenPerspectives";
 import {buildMetadata} from "@/lib/seo";
-import {verstehenContent} from "@/lib/content/verstehenContent";
+import {verstehenContent} from "@/lib/content/verstehen/verstehenContent";
 
 
 export const metadata = buildMetadata({
@@ -15,7 +15,6 @@ export const metadata = buildMetadata({
 });
 
 export default function VerstehenPage() {
-
     const {hero, introduction, topics, perspectives} = verstehenContent;
 
     return (

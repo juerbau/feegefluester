@@ -1,12 +1,9 @@
-
 import {
     Stethoscope,
     ClipboardList,
     Heart,
 } from "lucide-react";
-
 import { cn } from "@/lib/utils/cn";
-import { meineArbeitContent } from "@/lib/content/meineArbeitContent";
 import MainButton from "@/ui/components/common/MainButton";
 
 const icons = {
@@ -15,8 +12,7 @@ const icons = {
     heart: Heart,
 };
 
-export default function MeineArbeitGrenzen() {
-    const { grenzen } = meineArbeitContent;
+export default function MeineArbeitGrenzen({ grenzen }) {
 
     return (
         <section

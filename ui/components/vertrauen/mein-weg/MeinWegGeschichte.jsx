@@ -1,14 +1,9 @@
-
 import Image from "next/image";
-
 import { cn } from "@/lib/utils/cn";
-import { meinWegContent } from "@/lib/content/meinWegContent";
-
 import feeImage from "@/ui/images/vertrauen/fee.jpeg";
 import MainButton from "@/ui/components/common/MainButton";
 
-export default function MeinWegGeschichte() {
-    const { geschichte } = meinWegContent;
+export default function MeinWegGeschichte({ geschichte }) {
 
     const paragraphClass = cn(
         "font-body text-[#827d87]",

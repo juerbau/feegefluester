@@ -1,9 +1,7 @@
 import { PawPrint } from "lucide-react";
 import { cn } from "@/lib/utils/cn";
-import { vertrauenContent } from "@/lib/content/vertrauenContent";
 
-export default function VertrauenWachsen() {
-    const { vertrauenWachsen } = vertrauenContent;
+export default function VertrauenWachsen({ vertrauenWachsen }) {
 
     return (
         <section
@@ -25,7 +23,7 @@ export default function VertrauenWachsen() {
                     {/* Linker Bereich: Leitsatz */}
                     <div
                         className={cn(
-                            "mx-auto flex min-h-[300px] w-full max-w-md flex-col",
+                            "mx-auto flex min-h-75 w-full max-w-md flex-col",
                             "items-center justify-center",
                             "rounded-tr-[80px] rounded-bl-[80px]",
                             "bg-[#afbdaf]",

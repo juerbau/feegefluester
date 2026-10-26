@@ -3,6 +3,7 @@ import SpiegelthemenErklaerung from "@/ui/components/verstehen/spiegelthemen/Spi
 import SpiegelthemenBeispiele from "@/ui/components/verstehen/spiegelthemen/SpiegelthemenBeispiele";
 import SpiegelthemenAbschluss from "@/ui/components/verstehen/spiegelthemen/SpiegelthemenAbschluss";
 import {buildMetadata} from "@/lib/seo";
+import { spiegelthemenContent } from "@/lib/content/verstehen/spiegelthemen/spiegelthemenContent";
 
 
 export const metadata = buildMetadata({
@@ -15,12 +16,14 @@ export const metadata = buildMetadata({
 
 
 export default function SpiegelthemenPage() {
+    const { intro, erklaerung, beispiele, abschluss } = spiegelthemenContent;
+
     return (
         <>
-            <SpiegelthemenIntro/>
-            <SpiegelthemenErklaerung/>
-            <SpiegelthemenBeispiele/>
-            <SpiegelthemenAbschluss/>
+            <SpiegelthemenIntro intro={intro} />
+            <SpiegelthemenErklaerung erklaerung={erklaerung} />
+            <SpiegelthemenBeispiele beispiele={beispiele} />
+            <SpiegelthemenAbschluss abschluss={abschluss} />
         </>
     );
 }

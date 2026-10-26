@@ -5,7 +5,7 @@ import HomeIntroduction from "@/ui/components/home/HomeIntroduction";
 import HomeAbout from "@/ui/components/home/HomeAbout";
 import HomeContact from "@/ui/components/home/HomeContact";
 import {buildMetadata} from "@/lib/seo";
-import {homeContent} from "@/lib/content/homeContent";
+import {homeContent} from "@/lib/content/home/homeContent";
 
 
 export const metadata = buildMetadata({

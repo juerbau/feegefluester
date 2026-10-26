@@ -1,5 +1,6 @@
 import WegeZueinanderContent from "@/ui/components/verbinden/WegeZueinanderContent";
 import {buildMetadata} from "@/lib/seo";
+import {neueWegeContent} from "@/lib/content/verbinden/neueWege/neueWegeContent";
 
 
 export const metadata = buildMetadata({
@@ -12,5 +13,7 @@ export const metadata = buildMetadata({
 
 
 export default function WegeZueinanderPage() {
-    return <WegeZueinanderContent/>;
+    const content = neueWegeContent;
+
+    return <WegeZueinanderContent content={content}/>;
 }

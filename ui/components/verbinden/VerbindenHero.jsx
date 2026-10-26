@@ -1,12 +1,8 @@
-
 import Image from "next/image";
-
 import { cn } from "@/lib/utils/cn";
-import { verbindenContent } from "@/lib/content/verbindenContent";
 import verbindenHero from "@/ui/images/verbinden/verbinden-hero.png";
 
-export default function VerbindenHero() {
-    const { hero } = verbindenContent;
+export default function VerbindenHero({ hero }) {
 
     return (
         <section
@@ -16,14 +12,14 @@ export default function VerbindenHero() {
             <div
                 className={cn(
                     "relative w-full",
-                    "lg:min-h-[650px]"
+                    "lg:min-h-162.5"
                 )}
             >
                 {/* Bild */}
                 <div
                     className={cn(
-                        "relative h-[300px] w-full",
-                        "sm:h-[400px]",
+                        "relative h-75 w-full",
+                        "sm:h-100",
                         "lg:absolute lg:inset-0 lg:h-full"
                     )}
                 >
@@ -45,10 +41,10 @@ export default function VerbindenHero() {
                         className={cn(
                             "pointer-events-none absolute inset-0",
                             "hidden lg:block",
-                            "bg-gradient-to-r",
-                            "from-transparent from-[30%]",
-                            "via-[#f8f4ed]/85 via-[58%]",
-                            "to-champagner-light to-[78%]"
+                            "bg-linear-to-r",
+                            "from-transparent from-30%",
+                            "via-[#f8f4ed]/85 via-58%",
+                            "to-champagner-light to-78%"
                         )}
                         aria-hidden="true"
                     />

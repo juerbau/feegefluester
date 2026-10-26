@@ -1,18 +1,14 @@
-
 import { cn } from "@/lib/utils/cn";
-import { verbindenContent } from "@/lib/content/verbindenContent";
-
 import MainButton from "@/ui/components/common/MainButton";
 
-export default function WegeZueinanderContent() {
-    const { wegeZueinander } = verbindenContent;
+export default function WegeZueinanderContent({content}) {
 
     const [
         ausgangssituation,
         tiergespraech,
         rueckkehr,
         neuePerspektive,
-    ] = wegeZueinander.chapters;
+    ] = content.chapters;
 
     const bodyTextClass = cn(
         "font-body text-[#827d87]",
@@ -44,7 +40,7 @@ export default function WegeZueinanderContent() {
                 >
                     <div className="mx-auto max-w-3xl text-center">
                         <p className={handwrittenClass}>
-                            {wegeZueinander.subtitle}
+                            {content.subtitle}
                         </p>
 
                         <h1
@@ -54,7 +50,7 @@ export default function WegeZueinanderContent() {
                                 "leading-[1.1]"
                             )}
                         >
-                            {wegeZueinander.title}
+                            {content.title}
                         </h1>
 
                         <div
@@ -365,9 +361,9 @@ export default function WegeZueinanderContent() {
 
                         <div className="mt-14 flex justify-center">
                             <MainButton
-                                href={wegeZueinander.backLink.href}
+                                href={content.backLink.href}
                             >
-                                {wegeZueinander.backLink.label}
+                                {content.backLink.label}
                             </MainButton>
                         </div>
                     </div>

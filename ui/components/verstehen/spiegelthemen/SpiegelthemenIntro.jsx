@@ -1,9 +1,6 @@
-
 import { cn } from "@/lib/utils/cn";
-import { spiegelthemenContent } from "@/lib/content/spiegelthemenContent";
 
-export default function SpiegelthemenIntro() {
-    const { intro } = spiegelthemenContent;
+export default function SpiegelthemenIntro({ intro }) {
 
     return (
         <section

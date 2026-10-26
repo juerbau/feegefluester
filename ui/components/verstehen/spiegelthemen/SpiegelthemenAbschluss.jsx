@@ -1,9 +1,8 @@
 import { cn } from "@/lib/utils/cn";
 import MainButton from "@/ui/components/common/MainButton";
-import { spiegelthemenContent } from "@/lib/content/spiegelthemenContent";
 
-export default function SpiegelthemenAbschluss() {
-    const { abschluss } = spiegelthemenContent;
+
+export default function SpiegelthemenAbschluss({ abschluss }) {
 
     return (
         <section

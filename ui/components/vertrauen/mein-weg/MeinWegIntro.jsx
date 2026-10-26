@@ -1,9 +1,6 @@
-
 import { cn } from "@/lib/utils/cn";
-import { meinWegContent } from "@/lib/content/meinWegContent";
 
-export default function MeinWegIntro() {
-    const { intro } = meinWegContent;
+export default function MeinWegIntro({ intro }) {
 
     return (
         <section
