@@ -1,105 +1,85 @@
+
+import { cn } from "@/lib/utils/cn";
 import MainButton from "@/ui/components/common/MainButton";
 
-export default function VerstehenPerspectives() {
+export default function VerstehenPerspectives({ perspectives }) {
     return (
         <section
             aria-labelledby="verstehen-perspectives-title"
             className="w-full bg-white"
         >
             <div
-                className={[
+                className={cn(
                     "mx-auto grid w-full max-w-7xl",
                     "grid-cols-1 items-start",
                     "gap-10 px-6 pb-16 pt-10",
                     "md:px-10",
                     "lg:grid-cols-[0.9fr_1.1fr]",
-                    "lg:gap-24 lg:px-12 lg:pb-24 lg:pt-12",
-                ].join(" ")}
+                    "lg:gap-24 lg:px-12 lg:pb-24 lg:pt-12"
+                )}
             >
                 {/* Linke Seite – emotionaler Einstieg */}
                 <div
-                    className={[
+                    className={cn(
                         "mx-auto flex w-full max-w-xl flex-col items-start",
                         "text-left",
-                        "lg:mx-0 lg:max-w-none",
-                    ].join(" ")}
+                        "lg:mx-0 lg:max-w-none"
+                    )}
                 >
                     <p
-                        className={[
+                        className={cn(
                             "font-handwrite text-[#c8a56e]",
                             "text-[clamp(2rem,3vw,3rem)]",
-                            "leading-[1.3]",
-                        ].join(" ")}
+                            "leading-[1.3]"
+                        )}
                     >
-                        Manchmal lohnt sich ein Blick nach innen.
+                        {perspectives.eyebrow}
                     </p>
 
                     <h2
                         id="verstehen-perspectives-title"
-                        className={[
+                        className={cn(
                             "mt-6 font-body font-light",
                             "text-[#827d87]",
                             "text-[clamp(2rem,3vw,3.25rem)]",
                             "leading-[1.2]",
                             "tracking-[-0.025em]",
-                            "text-balance",
-                        ].join(" ")}
+                            "text-balance"
+                        )}
                     >
-                        Wenn Tiere uns neue Perspektiven zeigen.
+                        {perspectives.title}
                     </h2>
                 </div>
 
                 {/* Rechte Seite – Spiegelthemen */}
                 <div
-                    className={[
+                    className={cn(
                         "mx-auto flex w-full max-w-xl flex-col items-start",
                         "text-left",
-                        "lg:mx-0 lg:max-w-none",
-                    ].join(" ")}
+                        "lg:mx-0 lg:max-w-none"
+                    )}
                 >
                     <div
-                        className={[
+                        className={cn(
                             "w-full max-w-2xl space-y-5",
                             "font-body text-[#827d87]",
                             "text-[clamp(1.000rem,0.94rem+0.25vw,1.125rem)]",
-                            "leading-[1.8]",
-                        ].join(" ")}
+                            "leading-[1.8]"
+                        )}
                     >
-                        <p>
-                            Unsere Tiere begleiten uns oft sehr aufmerksam
-                            durch den Alltag. Manchmal regt uns ihr
-                            Verhalten dazu an, nicht nur auf sie,
-                            sondern auch auf uns selbst zu schauen.
-                        </p>
-
-                        <p>
-                            Welche Gefühle beschäftigen uns gerade?
-                            Gibt es Veränderungen oder Situationen,
-                            die unser gemeinsames Leben beeinflussen?
-                        </p>
-
-                        <p>
-                            In der Tierkommunikation werden solche
-                            möglichen Zusammenhänge als Spiegelthemen
-                            bezeichnet. Sie laden dazu ein, neue
-                            Perspektiven einzunehmen und das
-                            Miteinander bewusster zu betrachten.
-                        </p>
-
-                        <p>
-                            Dabei ist nicht jedes Verhalten eines
-                            Tieres ein Spiegel seines Menschen.
-                            Spiegelthemen sind eine mögliche
-                            Sichtweise, keine allgemeingültige Erklärung.
-                        </p>
+                        {perspectives.paragraphs.map((paragraph, index) => (
+                            <p key={index}>
+                                {paragraph}
+                            </p>
+                        ))}
                     </div>
 
                     {/* Weiterführender Button */}
                     <MainButton
-                        href="/verstehen/spiegelthemen"
+                        href={perspectives.cta.href}
                         className="mt-9"
                     >
-                        Mehr über Spiegelthemen erfahren
+                        {perspectives.cta.label}
                     </MainButton>
                 </div>
             </div>

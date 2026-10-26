@@ -1,15 +1,16 @@
-import Image from "next/image";
 
+import Image from "next/image";
+import { cn } from "@/lib/utils/cn";
 import heroImage from "@/ui/images/verstehen/verstehen-hero.png";
 
-export default function VerstehenHero() {
+export default function VerstehenHero({ hero }) {
     return (
         <section
             aria-labelledby="verstehen-hero-title"
             className="w-full bg-champagner-light"
         >
             <div
-                className={[
+                className={cn(
                     "mx-auto grid w-full max-w-7xl",
                     "grid-cols-1 items-center",
 
@@ -21,24 +22,24 @@ export default function VerstehenHero() {
 
                     // Desktop ab 1024 px
                     "lg:grid-cols-2 lg:gap-20",
-                    "lg:px-12 lg:py-24",
-                ].join(" ")}
+                    "lg:px-12 lg:py-24"
+                )}
             >
                 {/* Bildbereich */}
                 <div
-                    className={[
+                    className={cn(
                         "relative mx-auto w-full max-w-xl",
-                        "lg:mx-0 lg:max-w-none",
-                    ].join(" ")}
+                        "lg:mx-0 lg:max-w-none"
+                    )}
                 >
                     <div
-                        className={[
+                        className={cn(
                             "relative aspect-[4/5] w-full overflow-hidden",
                             "rounded-tl-[72px] rounded-tr-sm",
                             "rounded-bl-sm rounded-br-[72px]",
                             "lg:rounded-tl-[110px]",
-                            "lg:rounded-br-[110px]",
-                        ].join(" ")}
+                            "lg:rounded-br-[110px]"
+                        )}
                     >
                         <Image
                             src={heroImage}
@@ -53,50 +54,47 @@ export default function VerstehenHero() {
 
                 {/* Textbereich */}
                 <div
-                    className={[
+                    className={cn(
                         "mx-auto flex w-full max-w-xl flex-col items-start",
                         "text-left",
-                        "lg:mx-0 lg:max-w-none",
-                    ].join(" ")}
+                        "lg:mx-0 lg:max-w-none"
+                    )}
                 >
                     {/* Hauptüberschrift */}
                     <h1
                         id="verstehen-hero-title"
-                        className={[
+                        className={cn(
                             "font-body font-light text-[#827d87]",
                             "text-[clamp(3.5rem,5.5vw,5.5rem)]",
-                            "leading-[1.1] tracking-[-0.035em]",
-                        ].join(" ")}
+                            "leading-[1.1] tracking-[-0.035em]"
+                        )}
                     >
-                        Verstehen
+                        {hero.title}
                     </h1>
 
                     {/* Handschriftlicher Leitsatz */}
                     <p
-                        className={[
+                        className={cn(
                             "mt-7 font-handwrite text-[#c8a56e]",
                             "text-[clamp(2.25rem,3.2vw,3.5rem)]",
-                            "leading-[1.2]",
-                        ].join(" ")}
+                            "leading-[1.2]"
+                        )}
                     >
-                        Hinter jedem Verhalten
+                        {hero.statement.firstLine}
                         <br className="hidden lg:block" />
-                        {" "}steckt eine Geschichte.
+                        {" "}{hero.statement.secondLine}
                     </p>
 
                     {/* Einführungstext */}
                     <p
-                        className={[
+                        className={cn(
                             "mt-9 max-w-xl",
                             "font-body text-[#827d87]",
                             "text-[clamp(1.000rem,0.94rem+0.25vw,1.125rem)]",
-                            "leading-[1.85]",
-                        ].join(" ")}
+                            "leading-[1.85]"
+                        )}
                     >
-                        Manchmal zeigt uns unser Tier durch sein Verhalten,
-                        dass etwas in ihm vorgeht. Tierkommunikation lädt
-                        uns ein, genauer hinzuhören, neue Perspektiven
-                        zu entdecken und einander besser zu verstehen.
+                        {hero.description}
                     </p>
                 </div>
             </div>

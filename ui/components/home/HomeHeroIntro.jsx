@@ -1,5 +1,4 @@
 import { cn } from "@/lib/utils/cn";
-import MainButton from "@/ui/components/common/MainButton";
 
 export default function HomeHeroIntro({
                                           className,
@@ -38,7 +37,6 @@ export default function HomeHeroIntro({
             {/* ----------------------------------------
                 Überschrift
             ---------------------------------------- */}
-
             <h1
                 className={cn(
                     "font-body font-light",
@@ -63,7 +61,6 @@ export default function HomeHeroIntro({
             {/* ----------------------------------------
                 Goldene Handschrift
             ---------------------------------------- */}
-
             <p
                 className={cn(
                     "font-handwrite",

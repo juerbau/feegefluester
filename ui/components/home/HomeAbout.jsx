@@ -1,16 +1,17 @@
 import Image from "next/image";
-
-import aboutImage from "@/ui/images/HomeAbout.png";
+import { cn } from "@/lib/utils/cn";
 import MainButton from "@/ui/components/common/MainButton";
+import aboutImage from "@/ui/images/home/HomeAbout.png";
 
-export default function HomeAbout() {
+
+export default function HomeAbout({ about }) {
     return (
         <section
             aria-labelledby="home-about-title"
             className="relative w-full overflow-hidden bg-champagner-light"
         >
             <div
-                className={[
+                className={cn(
                     "mx-auto grid w-full max-w-6xl",
                     "grid-cols-1 items-center",
 
@@ -22,102 +23,90 @@ export default function HomeAbout() {
 
                     // Desktop ab 1024 px
                     "lg:grid-cols-2 lg:gap-20",
-                    "lg:px-12 lg:py-24",
-                ].join(" ")}
+                    "lg:px-12 lg:py-24"
+                )}
             >
                 {/* Persönliche Vorstellung */}
                 <div
-                    className={[
+                    className={cn(
                         "order-2",
                         "mx-auto w-full max-w-xl",
                         "text-left",
-                        "lg:order-1 lg:mx-0 lg:max-w-none",
-                    ].join(" ")}
+                        "lg:order-1 lg:mx-0 lg:max-w-none"
+                    )}
                 >
                     {/* Handschriftliche Einleitung */}
                     <p
-                        className={[
+                        className={cn(
                             "font-handwrite text-[#c8a56e]",
                             "text-[clamp(2rem,3vw,3rem)]",
-                            "leading-tight",
-                        ].join(" ")}
+                            "leading-tight"
+                        )}
                     >
-                        Ein bisschen über mich
+                        {about.eyebrow}
                     </p>
 
                     {/* Überschrift */}
                     <h2
                         id="home-about-title"
-                        className={[
+                        className={cn(
                             "mt-5 font-body font-light",
                             "text-[clamp(2rem,3.5vw,3.5rem)]",
                             "leading-[1.15]",
-                            "tracking-[-0.025em]",
-                            "text-[#827d87]",
-                        ].join(" ")}
+                            "tracking-tight",
+                            "text-[#827d87]"
+                        )}
                     >
-                        Hallo, ich bin
+                        {about.title.firstLine}
                         <br className="hidden sm:block" />
-                        {" "}Manuela.
+                        {" "}{about.title.secondLine}
                     </h2>
 
                     {/* Beschreibung */}
                     <div
-                        className={[
-                            "mt-7 max-w-[520px] space-y-5",
+                        className={cn(
+                            "mt-7 max-w-130 space-y-5",
                             "font-body leading-[1.9]",
                             "text-[#827d87]",
-                            "text-[clamp(1.000rem,0.94rem+0.25vw,1.125rem)]",
-                        ].join(" ")}
+                            "text-[clamp(1.000rem,0.94rem+0.25vw,1.125rem)]"
+                        )}
                     >
-                        <p>
-                            Tiere haben in meinem Leben schon immer
-                            einen besonderen Platz.
-                        </p>
-
-                        <p>
-                            Mit Feegeflüster möchte ich dazu beitragen,
-                            dass Mensch und Tier einander besser verstehen
-                            und ihre Verbindung stärken können.
-                        </p>
-
-                        <p>
-                            Dabei stehen für mich Einfühlungsvermögen,
-                            Vertrauen und ein liebevoller Blick auf jedes
-                            einzelne Tier im Mittelpunkt.
-                        </p>
+                        {about.paragraphs.map((paragraph, index) => (
+                            <p key={index}>
+                                {paragraph}
+                            </p>
+                        ))}
                     </div>
 
                     {/* Button */}
                     <MainButton
-                        href="/vertrauen"
+                        href={about.cta.href}
                         className="mt-9"
                     >
-                        Manuela kennenlernen
+                        {about.cta.label}
                     </MainButton>
                 </div>
 
                 {/* Bildbereich */}
                 <div
-                    className={[
+                    className={cn(
                         "order-1 flex w-full justify-center",
-                        "lg:order-2",
-                    ].join(" ")}
+                        "lg:order-2"
+                    )}
                 >
-                    <div className="relative w-full max-w-[440px] pb-8 pr-8">
-
+                    <div className="relative w-full max-w-110 pb-8 pr-8">
                         {/* Salbeigrüner Hintergrundakzent */}
                         <div
                             aria-hidden="true"
-                            className={[
+                            className={cn(
                                 "absolute bottom-0 right-0",
                                 "h-[90%] w-[90%]",
-                                "rounded-sm bg-[#afbdaf]",
-                            ].join(" ")}
+                                "rounded-sm bg-[#afbdaf]"
+                            )}
                         />
 
                         {/* Tierbild */}
-                        <div className="relative aspect-[4/5] overflow-hidden rounded-sm">
+                        <div className="relative aspect-4/5 overflow-hidden rounded-sm">
                             <Image
                                 src={aboutImage}
                                 alt="Katze in einer ruhigen, natürlichen Umgebung"
@@ -126,7 +115,6 @@ export default function HomeAbout() {
                                 className="object-cover object-center"
                             />
                         </div>
-
                     </div>
                 </div>
             </div>

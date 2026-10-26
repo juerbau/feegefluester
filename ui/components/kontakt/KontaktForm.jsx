@@ -1,16 +1,13 @@
-
 "use client";
 
 import { useState } from "react";
 import Link from "next/link";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-
 import { cn } from "@/lib/utils/cn";
 import { contactSchema } from "@/lib/validation/contactSchema";
-
 import MainButton from "@/ui/components/common/MainButton";
-import PageContentWidth from "@/ui/components/utils/PageContentWidth";
+
 
 export default function KontaktForm({ className }) {
     const [submitStatus, setSubmitStatus] = useState(null);
@@ -88,7 +85,10 @@ export default function KontaktForm({ className }) {
             )}
             aria-labelledby="kontaktformular-title"
         >
-            <PageContentWidth width="narrow">
+            <div className={cn(
+                "mx-auto w-full max-w-160",
+            )}
+            >
                 {/* Einleitung */}
                 <div className="mx-auto max-w-2xl text-center">
                     <h2
@@ -334,7 +334,7 @@ export default function KontaktForm({ className }) {
                         </MainButton>
                     </div>
                 </form>
-            </PageContentWidth>
+            </div>
         </section>
     );
 }

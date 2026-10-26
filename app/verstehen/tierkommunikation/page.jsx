@@ -1,5 +1,8 @@
-import TierkommunikationContent from "@/ui/components/verstehen/TierkommunikationContent";
+import TierkommunikationIntro from "@/ui/components/verstehen/tierkommunikation/TierkommunikationIntro";
+import TierkommunikationSituationen from "@/ui/components/verstehen/tierkommunikation/TierkommunikationSituationen";
+import TierkommunikationAbschluss from "@/ui/components/verstehen/tierkommunikation/TierkommunikationAbschluss";
 import {buildMetadata} from "@/lib/seo";
+import {tierkommunikationContent} from "@/lib/content/tierkommunikationContent";
 
 
 export const metadata = buildMetadata({
@@ -12,9 +15,13 @@ export const metadata = buildMetadata({
 
 
 export default function TierkommunikationPage() {
+    const { intro, situationen, abschluss } = tierkommunikationContent;
+
     return (
         <main>
-            <TierkommunikationContent/>
+            <TierkommunikationIntro intro={intro} />
+            <TierkommunikationSituationen situationen={situationen} />
+            <TierkommunikationAbschluss abschluss={abschluss} />
         </main>
     );
 }

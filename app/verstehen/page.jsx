@@ -1,9 +1,10 @@
-import {verstehenContent} from "@/lib/content/verstehenContent";
 import VerstehenHero from "@/ui/components/verstehen/VerstehenHero";
 import VerstehenIntroduction from "@/ui/components/verstehen/VerstehenIntroduction";
 import VerstehenTopics from "@/ui/components/verstehen/VerstehenTopics";
 import VerstehenPerspectives from "@/ui/components/verstehen/VerstehenPerspectives";
 import {buildMetadata} from "@/lib/seo";
+import {verstehenContent} from "@/lib/content/verstehenContent";
+
 
 export const metadata = buildMetadata({
     title: "Mensch und Tier besser verstehen",
@@ -14,19 +15,15 @@ export const metadata = buildMetadata({
 });
 
 export default function VerstehenPage() {
-    const content = verstehenContent;
+
+    const {hero, introduction, topics, perspectives} = verstehenContent;
 
     return (
-        <main className="min-h-screen">
-
-            <VerstehenHero/>
-
-            <VerstehenIntroduction/>
-
-            <VerstehenTopics/>
-
-            <VerstehenPerspectives/>
-
+        <main>
+            <VerstehenHero hero={hero}/>
+            <VerstehenIntroduction introduction={introduction}/>
+            <VerstehenTopics topics={topics}/>
+            <VerstehenPerspectives perspectives={perspectives}/>
         </main>
     );
 }

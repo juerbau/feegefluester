@@ -1,38 +1,26 @@
 import Link from "next/link";
-import { IconHeartHandshake, IconLeaf, IconSeeding } from "@tabler/icons-react";
-
+import {
+    IconHeartHandshake,
+    IconLeaf,
+    IconSeeding,
+} from "@tabler/icons-react";
 import { cn } from "@/lib/utils/cn";
 
-const topics = [
-    {
-        title: "Verstehen",
-        subtitle: "Gemeinsam hinschauen.",
-        href: "/verstehen",
-        icon: IconLeaf,
-    },
-    {
-        title: "Verbinden",
-        subtitle: "Einander wirklich begegnen.",
-        href: "/verbinden",
-        icon: IconHeartHandshake,
-    },
-    {
-        title: "Vertrauen",
-        subtitle: "Neue Wege gehen – zusammen.",
-        href: "/vertrauen",
-        icon: IconSeeding,
-    },
-];
+const topicIcons = {
+    "/verstehen": IconLeaf,
+    "/verbinden": IconHeartHandshake,
+    "/vertrauen": IconSeeding,
+};
 
-export default function HomeTopics() {
+export default function HomeTopics({ topics }) {
     return (
         <section
             aria-label="Unsere Themen"
             className="relative z-10 -mt-px w-full bg-champagner-light"
         >
             <div className="mx-auto grid max-w-7xl grid-cols-1 px-6 py-10 sm:grid-cols-3 lg:px-12 lg:py-12">
-                {topics.map((topic, index) => {
-                    const Icon = topic.icon;
+                {topics.items.map((topic, index) => {
+                    const Icon = topicIcons[topic.href];
 
                     return (
                         <Link
@@ -49,7 +37,7 @@ export default function HomeTopics() {
                             {/* Salbeigrüner Icon-Kreis */}
                             <span
                                 className={cn(
-                                    "mb-5 flex size-[68px] items-center justify-center",
+                                    "mb-5 flex size-17 items-center justify-center",
                                     "rounded-full bg-[#afbdaf]",
                                     "transition-all duration-300",
                                     "group-hover:bg-[#afbdaf]/70",

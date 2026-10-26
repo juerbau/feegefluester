@@ -175,18 +175,18 @@ export default function MeineArbeitAblauf() {
                     </p>
 
                     <div className="mt-8">
-        <span
-            className={cn(
-                "font-body font-light text-[#827d87]",
-                "text-[clamp(2rem,3vw,2.8rem)]"
-            )}
-        >
-            {ablauf.energieausgleich.price}
-        </span>
+                        <span
+                            className={cn(
+                                "font-body font-light text-[#827d87]",
+                                "text-[clamp(2rem,3vw,2.8rem)]"
+                            )}
+                        >
+                            {ablauf.energieausgleich.price}
+                        </span>
 
                         <span className="ml-2 font-body text-[#827d87]">
-            {ablauf.energieausgleich.unit}
-        </span>
+                            {ablauf.energieausgleich.unit}
+                        </span>
                     </div>
 
                     <div className="mx-auto mt-8 max-w-lg">
@@ -208,12 +208,12 @@ export default function MeineArbeitAblauf() {
                                         )}
                                         aria-hidden="true"
                                     >
-    <PawPrint
-        size={19}
-        strokeWidth={1.5}
-        className="text-[#afbdaf]"
-    />
-</span>
+                                        <PawPrint
+                                            size={19}
+                                            strokeWidth={1.5}
+                                            className="text-[#afbdaf]"
+                                        />
+                                    </span>
 
                                     <span
                                         className={cn(
@@ -222,8 +222,8 @@ export default function MeineArbeitAblauf() {
                                             "leading-[1.8]"
                                         )}
                                     >
-                {item}
-            </span>
+                                        {item}
+                                    </span>
                                 </li>
                             ))}
                         </ul>

@@ -1,8 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-
 import {IconHeart} from "@tabler/icons-react";
-
 import footerBackground from "@/ui/images/footer/Footer-Natur.png";
 import logo from "@/ui/images/logo/Feegefluester-FINAL.png";
 

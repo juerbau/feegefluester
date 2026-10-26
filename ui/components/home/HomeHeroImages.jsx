@@ -4,9 +4,9 @@ import { AnimatePresence, motion } from "motion/react";
 import { useEffect, useState } from "react";
 import Image from "next/image";
 
-import cat from "@/ui/images/hero/Katze_neu_2.png";
-import dog from "@/ui/images/hero/Hund_neu.png";
-import horse from "@/ui/images/hero/Pferd_neu.png";
+import cat from "@/ui/images/home/Katze_neu.png";
+import dog from "@/ui/images/home/Hund_neu.png";
+import horse from "@/ui/images/home/Pferd_neu.png";
 
 const images = [
     { src: cat, alt: "" },
